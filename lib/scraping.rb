@@ -1,3 +1,4 @@
+require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
@@ -47,8 +48,8 @@ class Irena::Scraper
 
         def print_topics
             self.make_topics
-            Renewables.all.each do |energy|
-              if energy.title && energy.title != ""
+            Renewables.detect do |energy|
+              if && energy.title == Renewables.name
                 puts "#{energy.title}"
                 puts "#{energy.description}"
               end

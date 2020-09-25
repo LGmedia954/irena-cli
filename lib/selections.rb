@@ -55,7 +55,7 @@ end
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.cycle { |item| return item.cyan if !read }
+        @energies.cycle { |item| return item.cyan if !read }  #Aiming to cycle unread items
         end
     end
 
