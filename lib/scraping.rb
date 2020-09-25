@@ -48,9 +48,9 @@ class Irena::Scraper
 
         def print_topics
             self.make_topics
-            Renewables.detect do |energy|
+            Renewables.detect do |headline|
               if @energies[input.to_i-1] == energy.title && Renewables.name
-                puts "#{energy.title}"
+                puts "#{energy.title}\n\n"
                 puts "#{energy.description}"
               end
             end
