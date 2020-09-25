@@ -1,4 +1,5 @@
 require 'pry'
+require 'colorize'
 
 class Renewables::Energy  #Looking to do @energies = Renewables::Energy.available or read
 
@@ -47,14 +48,14 @@ end
         @read = read
         @energies.select |energy| if input.to_i-1 == ("0..6")
         energy.save
-        @@all
+        all.blue
         end
     end
 
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.cycle { |energy| puts energy if !read }
+        @energies.cycle { |energy| puts energy.cyan if !read }
         end
     end
 
