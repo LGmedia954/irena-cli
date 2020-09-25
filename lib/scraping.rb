@@ -33,4 +33,28 @@ class Scraper  #Expect more refactoring here
         Nokogiri::HTML(open(""))
       end
 
+      def get_topics
+        doc.css(".post")
+      end
+
+      def make_topics
+        self.get_topics.each do |post|
+            energy = Renewables.new
+            energy.title = post.css("h2").text
+            energy.description = post.css("p").text
+            end
+        end
+
+        def print_topics
+            self.make_topics
+            Renewables.all.each do |energy|
+              if energy.title && energy.title != ""
+                puts "#{energy.title}"
+                puts "#{energy.description}"
+              end
+            end
+          end
+
     end
+
+    Scraper.new.print_topics
