@@ -40,7 +40,7 @@ class Irena::Scraper
 
       def make_topics
         self.get_topics.each do |post|
-            energy = Renewables.new  #This is great if I'm just displaying, 
+            energy = Renewables.new  #Would this double create?? 
             energy.title = post.css("h2").text
             energy.description = post.css("p").text
             end
