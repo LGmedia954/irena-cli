@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'irena_intl'
+
+Irena::CLI.new.call
