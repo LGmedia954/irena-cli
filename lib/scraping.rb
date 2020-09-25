@@ -40,7 +40,7 @@ class Irena::Scraper
 
       def make_topics
         self.get_topics.each do |post|
-            energy = Renewables.new
+            energy = Renewables.new  #This is great if I'm just displaying, 
             energy.title = post.css("h2").text
             energy.description = post.css("p").text
             end
@@ -49,7 +49,7 @@ class Irena::Scraper
         def print_topics
             self.make_topics
             Renewables.detect do |energy|
-              if && energy.title == Renewables.name
+              if @energies[input.to_i-1] == energy.title && Renewables.name
                 puts "#{energy.title}"
                 puts "#{energy.description}"
               end
