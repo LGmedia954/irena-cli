@@ -48,14 +48,14 @@ end
         @read = read
         @energies.select |energy| if input.to_i-1 == ("0..6")
         energy.save
-        all.blue
         end
+        all.blue
     end
 
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.cycle { |energy| puts energy.cyan if !read }
+        @energies.cycle { |energy| return energy.cyan if !read }
         end
     end
 
