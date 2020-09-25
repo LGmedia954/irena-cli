@@ -30,12 +30,12 @@ def initialize(energies = [])
     [5].name = "Wind"
 
     [6] = self.new
-    [6].name = "About IRENA"
+    [6].name = "More about IRENA"
 
 end
 
 
-    def save  #Looking to save items that have been read
+    def save  #To store items that will be read
         @@all << self
     end
 
@@ -44,7 +44,7 @@ end
     end
 
 
-    def read  #Should return instances of already read items
+    def read  #Calls save and returns instances of already read items
         @read = read
         @energies.select |item| if input.to_i-1 == ("0..6")
         item.save

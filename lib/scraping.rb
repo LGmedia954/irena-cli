@@ -3,34 +3,34 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Scraper  #Expect more refactoring here
+class Irena::Scraper
 
     def get_bioenergy
-      Nokogiri::HTML(open(""))
+      Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
     end
 
     def get_geothermal
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/geothermal"))
     end
 
       def get_hydropower
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/hydropower"))
       end
 
       def get_ocean
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/ocean"))
       end
 
       def get_solar
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/solar"))
       end
 
       def get_wind
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/wind"))
       end
 
       def get_aboutpage
-        Nokogiri::HTML(open(""))
+        Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
       end
 
       def get_topics
