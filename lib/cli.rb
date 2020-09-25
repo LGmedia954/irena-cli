@@ -1,4 +1,5 @@
 require 'pry'
+require 'colorize'
 
 class Irena::CLI  #CLI Controller
    
