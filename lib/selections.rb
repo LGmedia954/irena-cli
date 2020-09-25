@@ -35,7 +35,7 @@ def initialize(energies = [])
 end
 
 
-    def save  #Store items that will be read
+    def save  #Store items
         @@all << self
     end
 
