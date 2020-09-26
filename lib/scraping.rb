@@ -7,31 +7,33 @@ require_relative './selections.rb'
 class Irena::Scraper
 
     def get_bioenergy
-      Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
+      doc = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
+      name = doc.search("h2.subsite-banner-text").text
+
     end
 
     def get_geothermal
-        Nokogiri::HTML(open("https://www.irena.org/geothermal"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
     end
 
       def get_hydropower
-        Nokogiri::HTML(open("https://www.irena.org/hydropower"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
       end
 
       def get_ocean
-        Nokogiri::HTML(open("https://www.irena.org/ocean"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/ocean"))
       end
 
       def get_solar
-        Nokogiri::HTML(open("https://www.irena.org/solar"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/solar"))
       end
 
       def get_wind
-        Nokogiri::HTML(open("https://www.irena.org/wind"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/wind"))
       end
 
       def get_aboutpage
-        Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
+        doc = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
       end
 
       def get_topics
@@ -40,9 +42,8 @@ class Irena::Scraper
 
       def make_topics
         self.get_topics.each do |post|
-            energy = Renewables.find {|e| e.name == Renewables.name}  #Looking to match 
-            energy.title = post.css("h2").text
-            energy.description = post.css("p").text
+            Renewables.find {|e| e.name == Renewables.name}  #Looking to match menu selection to page fetch
+            energy.description = post.css("center-right-border.p[0,1,2,3,]").text.strip.gsub(/\s+/,' ')
             end
         end
 
