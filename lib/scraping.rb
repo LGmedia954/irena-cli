@@ -40,7 +40,7 @@ class Irena::Scraper
 
       def make_topics
         self.get_topics.each do |post|
-            energy = Renewables.new  #Would this double create?? 
+            energy = Renewables.find {|e| e.name == Renewables.name}  #Looking to match 
             energy.title = post.css("h2").text
             energy.description = post.css("p").text
             end
