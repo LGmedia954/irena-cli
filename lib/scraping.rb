@@ -6,6 +6,8 @@ require_relative './selections.rb'
 
 class Irena::Scraper #The About page is the most different here
 
+topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
+
     def get_bioenergy
       page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
       title = page.css("h2.subsite-banner-text").text
@@ -49,18 +51,19 @@ class Irena::Scraper #The About page is the most different here
         bullets = page.css("li.liststyle").text
       end
 
-      def make_topics
-        self.each do |post|
-            Renewables.find {|e| e.name == Renewables.name}  #Looking to match menu selection to page fetch
-            end
+      def find_topics
+        self.topics.each do |topic|
+        Renewables.find {|e| e.name == Renewables.name}
         end
+      end
 
         def print_topics
-            self.make_topics
-            Renewables.detect do |headline|
-              if @energies[input.to_i-1] == energy.title && Renewables.name
-                puts "#{energy.title}\n\n"
-                puts "#{energy.description}"
+            self.find_topics
+            Renewables.detect do |item|
+              if @energies[input.to_i-1] == topics.title && Renewables.name
+                puts "#{item.title}\n\n"
+                puts "#{item.description}"
+                puts "#{item.bullets}" 
               end
             end
           end

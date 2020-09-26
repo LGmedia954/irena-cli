@@ -49,13 +49,13 @@ end
         @energies.select {|item| if input.to_i-1 == ("0..6")}
         item.save
         end
-        all.blue
+        @@all.blue
     end
 
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.cycle {|item| return item.cyan if !read}  #Aiming to cycle unread items
+        @energies.find_all {|item| item.cyan if !read}
         end
     end
 
