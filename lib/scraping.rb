@@ -4,7 +4,7 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Irena::Scraper  #This could be refactored, but I'm leaving it for now because the About page is different
+class Irena::Scraper #The About page is the most different here
 
     def get_bioenergy
       page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
@@ -42,9 +42,11 @@ class Irena::Scraper  #This could be refactored, but I'm leaving it for now beca
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
-      def get_aboutpage
+      def get_about
         page = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
         title = page.css("h2.headline headline-md").text
+        description = page.css("p.center-right-border")[0,1,2].text.strip.gsub(/\s+/,' ')
+        bullets = page.css("li.liststyle").text.strip.gsub(/\s+/,' ')
       end
 
       def make_topics

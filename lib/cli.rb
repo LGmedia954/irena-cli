@@ -4,7 +4,7 @@ require 'colorize'
 class Irena::CLI  #CLI Controller
    
     def call
-        puts "Hello! I am IRENA. I promote renewable resources and technologies as the key to a sustainable future and helps countries achieve their renewable energy potential, with more than 180 countries actively engaged.\n\n"
+        puts "Hello! My name is IRENA. I promote renewable resources and technologies as the key to a sustainable future and help countries achieve their renewable energy potential. There are more than 180 countries actively engaged.\n\n"
         list_choices
         menu
         close

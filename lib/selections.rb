@@ -30,7 +30,7 @@ def initialize(energies = [])
     [5].name = "Wind"
 
     [6] = self.new
-    [6].name = "More about IRENA"
+    [6].name = "About IRENA"
 
 end
 
