@@ -4,46 +4,52 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Irena::Scraper
+class Irena::Scraper  #This could be refactored, but I'm leaving it for now because the About page is different
 
     def get_bioenergy
-      doc = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
-      name = doc.search("h2.subsite-banner-text").text
-
+      page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
+      title = page.css("h2.subsite-banner-text").text
+      description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
     end
 
     def get_geothermal
-        doc = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
+        page = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
+        title = page.css("h2.subsite-banner-text").text
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
     end
 
       def get_hydropower
-        doc = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
+        page = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
+        title = page.css("h2.subsite-banner-text").text
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
       def get_ocean
-        doc = Nokogiri::HTML(open("https://www.irena.org/ocean"))
+        page = Nokogiri::HTML(open("https://www.irena.org/ocean"))
+        title = page.css("h2.subsite-banner-text").text
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
       def get_solar
-        doc = Nokogiri::HTML(open("https://www.irena.org/solar"))
+        page = Nokogiri::HTML(open("https://www.irena.org/solar"))
+        title = page.css("h2.subsite-banner-text").text
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
       def get_wind
-        doc = Nokogiri::HTML(open("https://www.irena.org/wind"))
+        page = Nokogiri::HTML(open("https://www.irena.org/wind"))
+        title = page.css("h2.subsite-banner-text").text
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
       def get_aboutpage
-        doc = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
-      end
-
-      def get_topics
-        doc.css(".post")
+        page = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
+        title = page.css("h2.headline headline-md").text
       end
 
       def make_topics
-        self.get_topics.each do |post|
+        self.each do |post|
             Renewables.find {|e| e.name == Renewables.name}  #Looking to match menu selection to page fetch
-            energy.description = post.css("center-right-border.p[0,1,2,3,]").text.strip.gsub(/\s+/,' ')
             end
         end
 
