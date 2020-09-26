@@ -11,9 +11,10 @@ class Irena::CLI  #CLI Controller
     end
    
     def list_choices
-        @energies = Irena::Renewables.available
+        @energies = Irena::Renewables.initialize
         @energies.each.with_index(1) do |option, i|
         puts "#{i}. #{option}"
+        end
     end
   
     def menu

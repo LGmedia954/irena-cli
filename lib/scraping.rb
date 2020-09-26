@@ -46,7 +46,7 @@ class Irena::Scraper #The About page is the most different here
         page = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
         title = page.css("h2.headline headline-md").text
         description = page.css("p.center-right-border")[0,1,2].text.strip.gsub(/\s+/,' ')
-        bullets = page.css("li.liststyle").text.strip.gsub(/\s+/,' ')
+        bullets = page.css("li.liststyle").text
       end
 
       def make_topics

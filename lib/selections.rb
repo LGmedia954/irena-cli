@@ -1,7 +1,7 @@
 require 'pry'
 require 'colorize'
 
-class Irena::Renewables  #Looking to do @energies = Irena::Renewables.available or read
+class Irena::Renewables
 
 attr_accessor :name, :energies, :read, :available
 
@@ -44,9 +44,9 @@ end
     end
 
 
-    def read  #Calls save and returns instances of already read items
+    def read  #Calls save and returns instances of already read items in blue
         @read = read
-        @energies.select |item| if input.to_i-1 == ("0..6")
+        @energies.select {|item| if input.to_i-1 == ("0..6")}
         item.save
         end
         all.blue
@@ -55,7 +55,7 @@ end
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.cycle { |item| return item.cyan if !read }  #Aiming to cycle unread items
+        @energies.cycle {|item| return item.cyan if !read}  #Aiming to cycle unread items
         end
     end
 
