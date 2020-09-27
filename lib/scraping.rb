@@ -4,7 +4,7 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Irena::Scraper #The About page is the most different here
+class Irena::Scraper #The About page is the most different one here
 
 topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
@@ -52,7 +52,7 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
       end
 
       def find_topics
-        self.topics.each do |topic|
+        self.topics.each do |e|
         Renewables.find {|e| e.name == Renewables.name}
         end
       end
@@ -63,7 +63,7 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
               if @energies[input.to_i-1] == topics.title && Renewables.name
                 puts "#{item.title}\n\n"
                 puts "#{item.description}"
-                puts "#{item.bullets}" 
+                puts "#{item.bullets}" || ""
               end
             end
           end

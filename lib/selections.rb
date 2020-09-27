@@ -43,20 +43,21 @@ end
         @@all
     end
 
+    def self.reset_all
+        @@all.clear
+    end
+
 
     def read  #Calls save and returns instances of already read items in blue
         @read = read
-        @energies.select {|item| if input.to_i-1 == ("0..6")}
+        @energies.select {|item| input.to_i-1 == ("0..6")}
         item.save
-        end
-        @@all.blue
     end
 
 
     def available  #Should return instances of items not yet read
         @available = available
         @energies.find_all {|item| item.cyan if !read}
-        end
     end
 
 end
