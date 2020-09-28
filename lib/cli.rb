@@ -35,7 +35,8 @@ class Irena::CLI  #CLI Controller
   
   
     def close
-        puts "Thank you for your interest in renewable energy. It was delightful meeting you today.\n\n You can help by reaching out to public officials, stakeholders, and businesses about how renewable energy can help our communities to create more jobs, save money over time, and safeguard the environment."
+        puts "Thank you for your interest in renewable energy. It was delightful meeting you today.\n\n You can help by reaching out to public officials, stakeholders, and businesses about how renewable energy can help our communities to create more jobs, save money over time, and safeguard the environment.\n\n"
+        puts Irena::Renewables.read
     end
   
 end
