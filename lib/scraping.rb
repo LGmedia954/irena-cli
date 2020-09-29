@@ -52,19 +52,19 @@ topics = [Bioenergy, Geothermal, Hydropower, Ocean, Solar, Wind, About]
       end
 
       def find_topics
-        self.topics.each do |e|
-        Renewables.find {|e| e.name == Renewables.name}
+        self.topics.each do |t|
+        Renewables.find {|t| t.name == Renewables.name}
         end
       end
 
         def print_topics
             self.find_topics
             Renewables.detect do |item|
-              if @energies[input.to_i-1] && topics.title && Renewables.name
+              if topics.to_s.any? == Renewables.name && @energies[input.to_i-1]
                 puts "#{item.title}\n\n"
                 puts "#{item.description}"
                 puts "#{item.bullets}" || ""
-              end
+              enddz
             end
           end
 
