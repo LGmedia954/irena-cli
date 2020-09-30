@@ -30,7 +30,7 @@ def initialize(energies = [bioenergy, geothermal, hydropower, ocean, solar, wind
 
 end
 
-    def save  #Store items into class method
+    def save  #Store item into class method
         @@all << self
     end    
 
