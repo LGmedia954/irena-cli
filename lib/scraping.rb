@@ -63,13 +63,13 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
 
       def find_topics
         self.topics.each do |t|
-        Renewables.find {|t| t.subject == Renewables.name}
+        @energies.find {|t| t.subject == @energies.name}
         end
       end
 
         def print_topics  #Case input was not my first choice for code. I had a bit of difficulty here.
             self.find_topics
-            Renewables.one? |item|
+            @energies.one? |item|
             case input
               when @energies[input.to_i-1] == 0
                 get_bioenergy
