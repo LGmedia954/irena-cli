@@ -30,7 +30,7 @@ def initialize(energies = [bioenergy, geothermal, hydropower, ocean, solar, wind
 
 end
 
-    def save  #Store items
+    def save  #Store items into class method
         @@all << self
     end    
 
@@ -39,7 +39,7 @@ end
     end
 
 
-    def read  #Calls save and returns instances of already read items in green
+    def read  #Calls save for energies that the user chooses for reading, and should return @@all those items in green
         @read = read
         @energies.select {|item| input.to_i-1.any? == ("0..6")}
         item.save
