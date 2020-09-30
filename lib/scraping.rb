@@ -88,10 +88,9 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
                 puts "#{item.description}"
                 puts "#{item.bullets}" || ""
             
-          end
         end
     
     
     end
 
-    Scraper.new.print_topics
+    Irena::Scraper.new.print_topics
