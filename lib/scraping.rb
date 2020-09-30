@@ -6,7 +6,6 @@ require 'colorize'
 require 'nokogiri'
 require 'open-uri'
 
-require_relative './selections.rb'
 
 class Irena::Scraper  #The About page has list items
 
