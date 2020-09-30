@@ -1,5 +1,4 @@
 # irena-cli
-CLI Portfolio Project
 
 
 DESCRIPTION
