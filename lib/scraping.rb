@@ -4,7 +4,7 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Irena::Scraper #The About page is the most different one here
+class Irena::Scraper  #The About page is the most different one here
 
 topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
@@ -64,10 +64,9 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
         end
       end
 
-        def print_topics(*topics) #case input was not my first choice for code. I had a bit of difficulty here.
+        def print_topics  #Case input was not my first choice for code. I had a bit of difficulty here.
             self.find_topics
-            topics
-            @energies[input.to_i-1].detect && 
+            Renewables.one? |item|
             case input
               when @energies[input.to_i-1] == 0
                 get_bioenergy
@@ -83,14 +82,16 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
                 get_wind
               when @energies[input.to_i-1] == 6
                 get_about
+            end
 
                 puts "#{item.title}\n\n"
                 puts "#{item.description}"
                 puts "#{item.bullets}" || ""
-              
-            end
+            
           end
-
+        end
+    
+    
     end
 
     Scraper.new.print_topics
