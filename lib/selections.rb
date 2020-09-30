@@ -10,29 +10,22 @@ attr_accessor :name, :energies, :read, :available
 
 @@all = []
 
-def initialize(energies = [])
+def initialize(energies = [bioenergy, geothermal, hydropower, ocean, solar, wind, about])
     @name = name
     @energies = energies
 
-    [0] = self.new
     [0].name = "Bioenergy"
 
-    [1] = self.new
     [1].name = "Geothermal"
 
-    [2] = self.new
     [2].name = "Hydropower"
 
-    [3] = self.new
     [3].name = "Ocean"
 
-    [4] = self.new
     [4].name = "Solar"
 
-    [5] = self.new
     [5].name = "Wind"
 
-    [6] = self.new
     [6].name = "About"
 
 end
