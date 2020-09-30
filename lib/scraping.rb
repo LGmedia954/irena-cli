@@ -93,7 +93,6 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
             
         end
     
-    
     end
 
     Irena::Scraper.new.print_topics
