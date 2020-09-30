@@ -1,4 +1,8 @@
+require_relative '../lib/cli'
+require_relative '../lib/selections'
+
 require 'pry'
+require 'colorize'
 require 'nokogiri'
 require 'open-uri'
 

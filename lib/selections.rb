@@ -1,3 +1,6 @@
+require_relative '../lib/cli'
+require_relative '../lib/scraping'
+
 require 'pry'
 require 'colorize'
 

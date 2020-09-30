@@ -1,3 +1,6 @@
+require_relative '../lib/selections'
+require_relative '../lib/scraping'
+
 require 'pry'
 require 'colorize'
 
