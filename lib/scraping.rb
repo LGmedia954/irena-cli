@@ -4,7 +4,7 @@ require 'open-uri'
 
 require_relative './selections.rb'
 
-class Irena::Scraper  #The About page is the most different one here
+class Irena::Scraper  #The About page has list items
 
 topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
