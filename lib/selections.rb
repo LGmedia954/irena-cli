@@ -34,7 +34,7 @@ end
         @@all << self
     end    
 
-    def self.all  #self.all is our Class Getter
+    def self.all  #self.all is our Class Reader/Getter
         @@all
     end
 
