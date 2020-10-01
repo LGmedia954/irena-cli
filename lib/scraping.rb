@@ -61,8 +61,8 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
         bullets = page.css("li.liststyle").text
       end
 
-      def find_topics
-        self.topics.each do |t|
+      def find_topics   
+        self.topics.each do |t|  #Defining a method inside the class Scraper. Self would be the Scraper object.
         @energies.find {|t| t.subject == @energies.name}
         end
       end
