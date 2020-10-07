@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/irena_intl.rb'
+require '../lib/irena_intl'
 
 Irena::CLI.new.call
