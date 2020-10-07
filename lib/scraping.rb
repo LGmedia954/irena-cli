@@ -1,5 +1,6 @@
-require_relative '../lib/cli'
-require_relative '../lib/selections'
+require_relative './lib/cli'
+require_relative './lib/irena_intl'
+require_relative './lib/selections'
 
 require 'pry'
 require 'colorize'
