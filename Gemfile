@@ -6,4 +6,6 @@ gem 'nokogiri'
 
 gem 'colorize', '~> 0.8.1'
 
+gem 'pry'
+
 gemspec
