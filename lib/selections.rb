@@ -1,3 +1,4 @@
+require_relative '../bin/irena'
 require_relative './cli.rb'
 require_relative './irena_intl.rb'
 require_relative './scraping.rb'
