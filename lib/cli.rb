@@ -1,11 +1,3 @@
-require_relative '../bin/irena'
-require_relative './irena_intl.rb'
-require_relative './scraping.rb'
-require_relative './selections.rb'
-
-require 'pry'
-require 'colorize'
-
 class Irena::CLI  #CLI Controller
    
     def call

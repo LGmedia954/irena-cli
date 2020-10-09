@@ -1,11 +1,3 @@
-require_relative '../bin/irena'
-require_relative './cli.rb'
-require_relative './irena_intl.rb'
-require_relative './scraping.rb'
-
-require 'pry'
-require 'colorize'
-
 class Irena::Renewables
 
 attr_accessor :name, :energies, :read, :available
