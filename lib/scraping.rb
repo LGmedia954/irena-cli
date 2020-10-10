@@ -2,7 +2,7 @@ class Irena::Scraper  #The About page has list items
 
 topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
-    def get_bioenergy
+    def get_bioenergy  #This feels repetitive, but the URLs are different and the last scrape has list items, so I left this for now.
       subject = "Bioenergy"
       page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
       title = page.css("h2.subsite-banner-text").text
