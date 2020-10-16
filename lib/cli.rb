@@ -23,6 +23,31 @@ class CLI  #CLI Controller
         input = gets.strip.downcase
 
         if input.to_i <= 7 && input.to_i > 0
+
+            def print_topics  
+                self.find_topics
+                @energies.one? |item|
+                case input
+                  when @energies[input.to_i-1] == 0
+                    get_bioenergy
+                  when @energies[input.to_i-1] == 1
+                    get_geothermal
+                  when @energies[input.to_i-1] == 2
+                    get_hydropower
+                  when @energies[input.to_i-1] == 3
+                    get_ocean
+                  when @energies[input.to_i-1] == 4
+                    get_solar
+                  when @energies[input.to_i-1] == 5
+                    get_wind
+                  when @energies[input.to_i-1] == 6
+                    get_about
+                end
+
+
+
+
+
         puts @energies[input.to_i-1]
         elsif input == "exit"
         close

@@ -54,40 +54,16 @@ class Scraper
 
       @@topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
-      def find_topics   
-        @@topics.each do |t|  #Defining a method inside the class Scraper. Self would be the Scraper object.
-        Renewables.energies.find {|t| t.subject == @energies.name}
-        end
-      end
-
-        def print_topics  #Case input was not my first choice for code. I had a bit of difficulty here.
-            self.find_topics
-            @energies.one? |item|
-            case input
-              when @energies[input.to_i-1] == 0
-                get_bioenergy
-              when @energies[input.to_i-1] == 1
-                get_geothermal
-              when @energies[input.to_i-1] == 2
-                get_hydropower
-              when @energies[input.to_i-1] == 3
-                get_ocean
-              when @energies[input.to_i-1] == 4
-                get_solar
-              when @energies[input.to_i-1] == 5
-                get_wind
-              when @energies[input.to_i-1] == 6
-                get_about
-            end
+        def self.print_topics  #Defining a method inside the class Scraper. Self would be the Scraper object.
+          @@topics.each do {|t| t.subject == @energies.name}
 
                 puts "#{item.title}\n\n"
                 puts "#{item.description}"
                 puts "#{item.bullets}" || ""
-            
+          end
         end
     
     end
-
   end
 
     Irena::Scraper.new.print_topics
