@@ -1,60 +1,62 @@
-class Irena::Scraper  #The About page has list items
+module Irena
 
-topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
+class Scraper
 
-    def get_bioenergy  #This feels repetitive, but the URLs are different and the last scrape has list items, so I left this for now.
+    def self.get_bioenergy  #This feels repetitive, but the URLs are different and the last scrape has list items, so I left this for now.
       subject = "Bioenergy"
       page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
       title = page.css("h2.subsite-banner-text").text
       description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
     end
 
-    def get_geothermal
+    def self.get_geothermal
         subject = "Geothermal"
         page = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
     end
 
-      def get_hydropower
+      def self.get_hydropower
         subject = "Hydropower"
         page = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
-      def get_ocean
+      def self.get_ocean
         subject = "Ocean"
         page = Nokogiri::HTML(open("https://www.irena.org/ocean"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
-      def get_solar
+      def self.get_solar
         subject = "Solar"
         page = Nokogiri::HTML(open("https://www.irena.org/solar"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
-      def get_wind
+      def self.get_wind
         subject = "Wind"
         page = Nokogiri::HTML(open("https://www.irena.org/wind"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
-      def get_about
+      def self.get_about  #The About page has list items
         subject = "About"
         page = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
         title = page.css("h2.headline headline-md").text
-        description = page.css("p.center-right-border")[0,1,2].text.strip.gsub(/\s+/,' ')
+        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
         bullets = page.css("li.liststyle").text
       end
 
+      @@topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
+
       def find_topics   
-        self.topics.each do |t|  #Defining a method inside the class Scraper. Self would be the Scraper object.
-        @energies.find {|t| t.subject == @energies.name}
+        @@topics.each do |t|  #Defining a method inside the class Scraper. Self would be the Scraper object.
+        Renewables.energies.find {|t| t.subject == @energies.name}
         end
       end
 
@@ -85,5 +87,7 @@ topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, g
         end
     
     end
+
+  end
 
     Irena::Scraper.new.print_topics

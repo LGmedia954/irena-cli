@@ -1,30 +1,51 @@
-class Irena::Renewables
+module Irena
+
+class Renewables
 
 attr_accessor :name, :energies, :read, :available
 
 @@all = []
 
-def initialize(energies = [bioenergy, geothermal, hydropower, ocean, solar, wind, about])
+def initialize(name)
     @name = name
     @energies = energies
-
-    [0].name = "Bioenergy"
-
-    [1].name = "Geothermal"
-
-    [2].name = "Hydropower"
-
-    [3].name = "Ocean"
-
-    [4].name = "Solar"
-
-    [5].name = "Wind"
-
-    [6].name = "About"
-
+    save
 end
 
-    def save  #Class method to store item.
+    def bioenergy
+        bioenergy = "Bioenergy"
+    end
+    
+    def geothermal
+        geothermal = "Geothermal"
+    end
+
+    def hydropower
+        hydropower = "Hydropower"
+    end
+
+    def ocean
+        ocean = "Ocean"
+    end
+
+    def solar
+        solar = "Solar"
+    end
+
+    def wind
+        wind = "Wind"
+    end
+
+    def wind
+        wind = "About"
+    end
+
+
+    def energies
+        @energies
+    end
+
+    def save  #Store item.
         @@all << self
     end    
 
@@ -46,4 +67,5 @@ end
         @energies.find_all {|item| item.cyan if !read}
     end
 
+end
 end

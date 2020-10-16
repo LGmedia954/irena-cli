@@ -1,4 +1,6 @@
-class Irena::CLI  #CLI Controller
+module Irena
+
+class CLI  #CLI Controller
    
     def call
         puts "Hello! My name is IRENA. I promote renewable resources and technologies as the key to a sustainable future and help countries achieve their renewable energy potential. There are more than 180 countries actively engaged.\n\n"
@@ -36,4 +38,5 @@ class Irena::CLI  #CLI Controller
         puts @energies.read
     end
   
+end
 end

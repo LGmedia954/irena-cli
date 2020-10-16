@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'nokogiri'
 
-gem 'colorize', '~> 0.8.1'
+#gem 'colorize', '~> 0.8.1'
 
 gem 'pry'
 
