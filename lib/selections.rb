@@ -2,7 +2,7 @@ module Irena
 
 class Renewables
 
-attr_accessor :name, :energies, :read, :available
+attr_accessor :name, :energies, :read
 
 @@all = []
 
@@ -13,31 +13,31 @@ def initialize(name)
 end
 
     def bioenergy
-        bioenergy = "Bioenergy"
+        name = "Bioenergy"
     end
     
     def geothermal
-        geothermal = "Geothermal"
+        name = "Geothermal"
     end
 
     def hydropower
-        hydropower = "Hydropower"
+        name = "Hydropower"
     end
 
     def ocean
-        ocean = "Ocean"
+        name = "Ocean"
     end
 
     def solar
-        solar = "Solar"
+        name = "Solar"
     end
 
     def wind
-        wind = "Wind"
+        name = "Wind"
     end
 
     def wind
-        wind = "About"
+        name = "About"
     end
 
 
@@ -45,7 +45,7 @@ end
         @energies
     end
 
-    def save  #Store item.
+    def save  #Store items.
         @@all << self
     end    
 
@@ -54,18 +54,11 @@ end
     end
 
 
-    def read  #Calls save for energies that the user chooses for reading, and should return @@all those items in green
+    def self.read  #Calls save for energies that the user chooses for reading, and should return @@all those items in green
         @read = read
         @energies.select {|item| input.to_i-1.any? == ("0..6")}
         item.save
         @@all.green
-    end
-
-
-    def available  #Should return instances of items not yet read
-        @available = available
-        @energies.each do |item|
-        return item.cyan if !read
     end
 
 end
