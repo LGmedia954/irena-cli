@@ -64,7 +64,8 @@ end
 
     def available  #Should return instances of items not yet read
         @available = available
-        @energies.find_all {|item| item.cyan if !read}
+        @energies.each do |item|
+        return item.cyan if !read
     end
 
 end
