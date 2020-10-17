@@ -14,12 +14,12 @@ class CLI  #CLI Controller
         choices.each.with_index(1) do |option, i|
         puts "#{i}. #{option}"
         end
+        puts "\n Please enter a number 1-7."
     end
   
     def user_choices
-        input = ""
+        input = nil
         while input != "exit"
-            puts "\n Please enter a number 1-7 to learn more,\n or type EXIT to leave the program.\n\n".
             input = gets.strip.downcase
             case input
             
@@ -38,10 +38,10 @@ class CLI  #CLI Controller
                 when [input.to_i-1] == 6
                     Scraper.new.get_about
 
-                when input > 7 || input < 0
-                    puts "Invalid entry. Please try again."  
+                when input.to_i-1 >= 7 || input.to_i-1 <= 0
+                    puts "Invalid input. Please try again,\n or type EXIT to leave the program."  
 
-                when input == "exit"
+                else input == "exit"
                     close
                 
             end
@@ -51,7 +51,6 @@ class CLI  #CLI Controller
   
     def close
         puts "Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n"
-        puts @energies.read
     end
   
 end
