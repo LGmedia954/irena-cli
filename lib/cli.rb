@@ -4,48 +4,47 @@ class CLI  #CLI Controller
    
     def call
         puts "Hello! My name is IRENA.\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n"
-        list_choices
         menu
+        user_choices
         close
     end
    
-    def list_choices
+    def menu
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
         choices.each.with_index(1) do |option, i|
         puts "#{i}. #{option}"
         end
     end
   
-    def menu
-        input = nil
+    def user_choices
+        input = ""
         while input != "exit"
-        puts "Please enter a number 1-7 to learn more,\n or type EXIT to leave the program.\n\n"
-        input = gets.strip.downcase
-        
-        if input.to_i <= 7 && input.to_i > 0
+            puts "\n Please enter a number 1-7 to learn more,\n or type EXIT to leave the program.\n\n".
+            input = gets.strip.downcase
             case input
+            
                 when [input.to_i-1] == 0
-                    Scraper.get_bioenergy
+                    Scraper.new.get_bioenergy
                 when [input.to_i-1] == 1
-                    Scraper.get_geothermal
+                    Scraper.new.get_geothermal
                 when [input.to_i-1] == 2
-                    Scraper.get_hydropower
+                    Scraper.new.get_hydropower
                 when [input.to_i-1] == 3
-                    Scraper.get_ocean
+                    Scraper.new.get_ocean
                 when [input.to_i-1] == 4
-                    Scraper.get_solar
+                    Scraper.new.get_solar
                 when [input.to_i-1] == 5
-                    Scraper.get_wind
+                    Scraper.new.get_wind
                 when [input.to_i-1] == 6
-                    Scraper.get_about
+                    Scraper.new.get_about
 
-                Scraper.print_topics
+                when input > 7 || input < 0
+                    puts "Invalid entry. Please try again."  
+
+                when input == "exit"
+                    close
+                
             end
-
-        elsif input == "exit"
-        close
-        else
-        puts "Invalid entry. Please try again."
         end
     end
   
@@ -55,7 +54,6 @@ class CLI  #CLI Controller
         puts @energies.read
     end
   
-    end
 end
 
 end
