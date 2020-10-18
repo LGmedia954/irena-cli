@@ -4,7 +4,7 @@ class Scraper
 
   attr_accessor :page, :title, :description
 
-  def initialize()
+  def initialize(subject)
     @page = page
     @title = title
     @description = description
