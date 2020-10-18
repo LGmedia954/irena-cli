@@ -3,7 +3,8 @@ module Irena
 class CLI  #CLI Controller
    
     def call
-        puts "---Hello! My name is IRENA.---\n\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n"
+        puts "---Hello! My name is IRENA.---".colorize(:yellow)
+        puts"\n\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n".colorize(:cyan)
         menu
         user_choices
     end
@@ -11,7 +12,7 @@ class CLI  #CLI Controller
     def menu
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
         choices.each.with_index(1) do |option, i|
-        puts "#{i}. #{option}"
+        puts "#{i}. #{option}".colorize(:green)
         end  
     end
   
@@ -38,11 +39,11 @@ class CLI  #CLI Controller
                     Scraper.new.get_about
 
                 when "exit"
-                    puts "Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n"
+                    puts "Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
                     break
-                    
+
                 else [input.to_i-1] != [0..6] || input != "exit"
-                    puts "Invalid input. Please try again,\n or type EXIT to leave the program."  
+                    puts "Invalid input. Please try again,\n or type EXIT to leave the program.".colorize(:red)
                 
             end
         end
