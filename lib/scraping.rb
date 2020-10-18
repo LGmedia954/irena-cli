@@ -55,7 +55,7 @@ class Scraper
 
       @@topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
-        def self.print_topics  #Defining a method inside the class Scraper. Self would be the Scraper object.
+        def self.print_topics
           @@topics.each do |t|
 
                 puts "#{@title}\n\n"
@@ -66,6 +66,7 @@ class Scraper
         end
     
     end
+  
   end
 
     Irena::Scraper.print_topics

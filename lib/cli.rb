@@ -1,12 +1,12 @@
 module Irena
 
-class CLI  #CLI Controller
+class CLI
    
     def call
-        puts "---Hello! My name is IRENA.---".colorize(:yellow)
+        puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
         puts"\n\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n".colorize(:cyan)
         menu
-        user_choices
+        get_user_input
     end
    
     def menu
@@ -16,34 +16,37 @@ class CLI  #CLI Controller
         end  
     end
   
-    def user_choices
+    def get_user_input
         input = ""
         while input != "exit"
             puts "\n Please enter a number 1-7."
             input = gets.strip.downcase
             case input
             
-                when [input.to_i-1] == 0
+                when [input.to_i] == 1
                     Scraper.new.get_bioenergy
-                when [input.to_i-1] == 1
+                when [input.to_i] == 2
                     Scraper.new.get_geothermal
-                when [input.to_i-1] == 2
+                when [input.to_i] == 3
                     Scraper.new.get_hydropower
-                when [input.to_i-1] == 3
+                when [input.to_i] == 4
                     Scraper.new.get_ocean
-                when [input.to_i-1] == 4
+                when [input.to_i] == 5
                     Scraper.new.get_solar
-                when [input.to_i-1] == 5
+                when [input.to_i] == 6
                     Scraper.new.get_wind
-                when [input.to_i-1] == 6
+                when [input.to_i] == 7
                     Scraper.new.get_about
+
+                #when "next"
+                    #puts "\n\nPlease make a new selection,\n or type EXIT to leave the program."
 
                 when "exit"
                     puts "Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
                     break
 
-                else [input.to_i-1] != [0..6] || input != "exit"
-                    puts "Invalid input. Please try again,\n or type EXIT to leave the program.".colorize(:red)
+                else
+                    puts "Invalid input. Please try again.".colorize(:red)
                 
             end
         end
