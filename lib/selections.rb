@@ -8,8 +8,8 @@ attr_accessor :name, :energies
 
     def initialize(name)
         @name = name
-        @energies = energies
-        @@all << self
+        @energies = []
+        save
     end
 
     def bioenergy
@@ -36,7 +36,7 @@ attr_accessor :name, :energies
         name = "Wind"
     end
 
-    def wind
+    def about
         name = "About"
     end
 
@@ -45,8 +45,12 @@ attr_accessor :name, :energies
         @energies
     end   
 
-    def self.all  #self.all is our Class Reader/Getter
+    def self.all
         @@all
+    end
+
+    def save
+        @@all << self
     end
 
 end

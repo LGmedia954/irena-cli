@@ -4,13 +4,13 @@ class Scraper
 
   attr_accessor :page, :title, :description
 
-  def initialize(subject)
+  def initialize()
     @page = page
     @title = title
     @description = description
   end
   
-    def self.get_bioenergy  #This feels repetitive, but the URLs are different and the last scrape has list items, so I left this for now.
+    def self.get_bioenergy
         page = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
         title = page.css("h2.subsite-banner-text").text
         description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
