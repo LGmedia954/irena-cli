@@ -7,6 +7,7 @@ class CLI
         puts"\n\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n".colorize(:cyan)
         menu
         get_user_input
+        close
     end
    
     def menu
@@ -37,16 +38,14 @@ class CLI
                     Irena::Scraper.new.get_wind
                 when [input.to_i] == 7
                     Irena::Scraper.new.get_about
-
                 when "exit"
-                    puts "\n\n Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
-                    break
-                
-                else input.to_i != [1..7] || input != "exit"
-                    puts "Invalid input. Please try again.".colorize(:red)
-                
+                    close
             end
         end
+    end
+
+    def close
+        puts "\n\n Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
     end
   
 end
