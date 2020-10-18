@@ -12,16 +12,16 @@ attr_accessor :name, :energies
         save
     end
 
-    def energies
-        @energies
-    end   
-
     def self.all
         @@all
     end
 
     def save
         @@all << self
+    end
+
+    def energies
+        @energies
     end
 
 end

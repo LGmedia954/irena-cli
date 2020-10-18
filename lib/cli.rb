@@ -13,39 +13,36 @@ class CLI
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
         choices.each.with_index(1) do |option, i|
         puts "#{i}. #{option}".colorize(:green)
-        end  
+        end
+        puts "\n Please enter a number 1-7."
     end
   
     def get_user_input
-        input = ""
+        input = nil
         while input != "exit"
-            puts "\n Please enter a number 1-7."
             input = gets.strip.downcase
             case input
             
                 when [input.to_i] == 1
-                    Scraper.new.get_bioenergy
+                    Irena::Scraper.new.get_bioenergy
                 when [input.to_i] == 2
-                    Scraper.new.get_geothermal
+                    Irena::Scraper.new.get_geothermal
                 when [input.to_i] == 3
-                    Scraper.new.get_hydropower
+                    Irena::Scraper.new.get_hydropower
                 when [input.to_i] == 4
-                    Scraper.new.get_ocean
+                    Irena::Scraper.new.get_ocean
                 when [input.to_i] == 5
-                    Scraper.new.get_solar
+                    Irena::Scraperr.new.get_solar
                 when [input.to_i] == 6
-                    Scraper.new.get_wind
+                    Irena::Scraper.new.get_wind
                 when [input.to_i] == 7
-                    Scraper.new.get_about
-
-                #when "next"
-                    #puts "\n\nPlease make a new selection,\n or type EXIT to leave the program."
+                    Irena::Scraper.new.get_about
 
                 when "exit"
-                    puts "Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
+                    puts "\n\n Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
                     break
-
-                else
+                
+                else input.to_i != [1..7] || input != "exit"
                     puts "Invalid input. Please try again.".colorize(:red)
                 
             end
