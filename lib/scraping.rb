@@ -49,19 +49,15 @@ class Scraper
       def self.get_about  #The About page has list items
         page = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
         title = page.css("h2.headline headline-md").text
-        description = page.css("p.center-right-border").text.strip.gsub(/\s+/,' ')
-        bullets = page.css("li.liststyle").text
+        description = page.css("span.center-right-border").text.strip.gsub(/\s+/,' ')
       end
 
       @@topics = [get_bioenergy, get_geothermal, get_hydropower, get_ocean, get_solar, get_wind, get_about]
 
         def self.print_topics
           @@topics.each do |t|
-
-                puts "#{@title}\n\n"
-                puts "#{@description}"
-                puts "#{@bullets}" || ""
-
+            puts "#{@title}\n\n"
+            puts "#{@description}"
           end
         end
     

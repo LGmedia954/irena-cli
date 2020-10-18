@@ -3,11 +3,14 @@ module Irena
 class CLI
    
     def call
-        puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
-        puts"\n\n I promote renewable resources and technologies\n as the key to a sustainable future and\n help countries achieve their renewable energy potential.\n There are more than 180 countries actively engaged.\n\n".colorize(:cyan)
+        intro
         menu
         get_user_input
-        close
+    end
+
+    def intro
+        puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
+        puts"\n I support countries in their transition to a sustainable energy future.\n\n".colorize(:cyan)
     end
    
     def menu
@@ -15,7 +18,7 @@ class CLI
         choices.each.with_index(1) do |option, i|
         puts "#{i}. #{option}".colorize(:green)
         end
-        puts "\n Please enter a number 1-7."
+        puts "\n Please enter a number 1-7.\n To return to this menu at any time, type LIST.\n"
     end
   
     def get_user_input
@@ -25,27 +28,38 @@ class CLI
             case input
             
                 when [input.to_i] == 1
-                    Irena::Scraper.new.get_bioenergy
+                    puts "Bioenergy"
+                    #Irena::Scraper.new.get_bioenergy
                 when [input.to_i] == 2
-                    Irena::Scraper.new.get_geothermal
+                    puts "Geothermal"
+                    #Irena::Scraper.new.get_geothermal
                 when [input.to_i] == 3
-                    Irena::Scraper.new.get_hydropower
+                    puts "Hydropower"
+                    #Irena::Scraper.new.get_hydropower
                 when [input.to_i] == 4
-                    Irena::Scraper.new.get_ocean
+                    puts "Ocean"
+                    #Irena::Scraper.new.get_ocean
                 when [input.to_i] == 5
-                    Irena::Scraperr.new.get_solar
+                    puts "Solar"
+                    #Irena::Scraperr.new.get_solar
                 when [input.to_i] == 6
-                    Irena::Scraper.new.get_wind
+                    puts "Wind"
+                    #Irena::Scraper.new.get_wind
                 when [input.to_i] == 7
-                    Irena::Scraper.new.get_about
+                    puts "About"
+                when "list"
+                    menu
                 when "exit"
                     close
+                else
+                    puts "Invalid input. Please try again.".colorize(:red)
+        
             end
         end
     end
 
     def close
-        puts "\n\n Thank you for your interest in renewable energy.\n It was delightful meeting you today.\n\n You can help by reaching out to\n public officials, stakeholders, and businesses\n about how renewable energy can help our communities\n to create more jobs, save money over time,\n and safeguard the environment.\n\n".colorize(:cyan)
+        puts "\n Thank you for your interest.\n It was delightful meeting you today!".colorize(:yellow)
     end
   
 end
