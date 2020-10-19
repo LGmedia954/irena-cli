@@ -30,7 +30,6 @@ class CLI
                 when "1"
                     #puts "Bioenergy"
                     Irena::Scraper.get_bioenergy
-                    #Irena::Scraper.print_topics
                 when "2"
                     puts "Geothermal"
                     #Irena::Scraper.get_geothermal
