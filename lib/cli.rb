@@ -10,7 +10,7 @@ class CLI
 
     def intro
         puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
-        puts"\n I support countries in their transition to a sustainable energy future.\n\n".colorize(:cyan)
+        puts"\n I support countries in their transition to a sustainable energy future.\n IRENA stands for the International Renewable Energy Agency.\n With more than 180 countries actively engaged, IRENA promotes\n renewable resources and technologies as the key to a sustainable future\n and helps countries achieve their renewable energy potential.\n".colorize(:cyan)
     end
    
     def menu
@@ -27,25 +27,25 @@ class CLI
             input = gets.strip.downcase
             case input
             
-                when [input.to_i] == 1
-                    puts "Bioenergy"
-                    #Irena::Scraper.new.get_bioenergy
-                when [input.to_i] == 2
+                when "1"
+                    #puts "Bioenergy"
+                    Irena::Scraper.new.get_bioenergy
+                when "2"
                     puts "Geothermal"
                     #Irena::Scraper.new.get_geothermal
-                when [input.to_i] == 3
+                when "3"
                     puts "Hydropower"
                     #Irena::Scraper.new.get_hydropower
-                when [input.to_i] == 4
+                when "4"
                     puts "Ocean"
                     #Irena::Scraper.new.get_ocean
-                when [input.to_i] == 5
+                when "5"
                     puts "Solar"
                     #Irena::Scraperr.new.get_solar
-                when [input.to_i] == 6
+                when "6"
                     puts "Wind"
                     #Irena::Scraper.new.get_wind
-                when [input.to_i] == 7
+                when "7"
                     puts "About"
                 when "list"
                     menu
@@ -59,7 +59,7 @@ class CLI
     end
 
     def close
-        puts "\n Thank you for your interest.\n It was delightful meeting you today!".colorize(:yellow)
+        puts "\n Thank you for your interest in renewable energy.\n It was delightful meeting you today!".colorize(:cyan)
     end
   
 end
