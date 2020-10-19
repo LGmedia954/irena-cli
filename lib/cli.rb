@@ -29,24 +29,26 @@ class CLI
             
                 when "1"
                     #puts "Bioenergy"
-                    Irena::Scraper.new.get_bioenergy
+                    Irena::Scraper.get_bioenergy
+                    #Irena::Scraper.print_topics
                 when "2"
                     puts "Geothermal"
-                    #Irena::Scraper.new.get_geothermal
+                    #Irena::Scraper.get_geothermal
                 when "3"
                     puts "Hydropower"
-                    #Irena::Scraper.new.get_hydropower
+                    #Irena::Scraper.get_hydropower
                 when "4"
                     puts "Ocean"
-                    #Irena::Scraper.new.get_ocean
+                    #Irena::Scraper.get_ocean
                 when "5"
                     puts "Solar"
-                    #Irena::Scraperr.new.get_solar
+                    #Irena::Scraper.get_solar
                 when "6"
                     puts "Wind"
-                    #Irena::Scraper.new.get_wind
+                    #Irena::Scraper.get_wind
                 when "7"
                     puts "About"
+                    #Irena::Scraper.get_about
                 when "list"
                     menu
                 when "exit"

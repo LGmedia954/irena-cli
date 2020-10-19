@@ -4,7 +4,7 @@ class Scraper
 
   attr_accessor :page, :title, :description
 
-  def initialize()
+  def initialize(input)
     @page = page
     @title = title
     @description = description
@@ -57,7 +57,7 @@ class Scraper
         def self.print_topics
           @@topics.each do |t|
             puts "#{@title}\n\n"
-            puts "#{@description}"
+            puts "#{@description}\n\n"
           end
         end
     

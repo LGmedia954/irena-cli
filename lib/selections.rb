@@ -1,14 +1,14 @@
 module Irena
 
-class Renewables
+class Energy
 
-attr_accessor :name, :energies
+attr_accessor :name, :element
 
 @@all = []
 
-    def initialize(name)
+    def initialize(name, element)
         @name = name
-        @energies = []
+        @element = element
         save
     end
 
@@ -18,10 +18,6 @@ attr_accessor :name, :energies
 
     def save
         @@all << self
-    end
-
-    def energies
-        @energies
     end
 
 end
