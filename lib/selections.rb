@@ -6,14 +6,16 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :abou
 
 @@all = []
 
+    # Hook
     def initialize
         @@all << self
     end
      
+    # Class Method, Class Getter
     def self.all
         @@all
     end
-    
+
 
     #Constructor
     def self.new_from_renewables(url)

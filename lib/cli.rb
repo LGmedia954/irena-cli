@@ -29,7 +29,7 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    Irena::EnergyScraper.new(bio)
+                    Irena::EnergyScraper.new("https://www.irena.org/bioenergy")
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
                     #Irena::EnergyScraper.new

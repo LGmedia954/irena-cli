@@ -22,8 +22,8 @@ class EnergyScraper
       energy[:about] = org.search("span.center-right-border").text.strip.gsub(/\s+/,' ')
 
       energy
-    end
-
   end
+
+end
 
 end
