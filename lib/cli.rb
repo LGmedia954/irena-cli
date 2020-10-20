@@ -29,25 +29,25 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    #Irena::EnergyScraper.new("https://www.irena.org/bioenergy")
+                    puts "  Description: #{@bioenergy}"
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@geothermal}"
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@hydropower}"
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@ocean}"
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@solar}"
                 when "6"
                     puts "WIND".colorize(:white)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@wind}"
                 when "7"
                     puts "ABOUT".colorize(:light_magenta)
-                    #Irena::EnergyScraper.new
+                    puts "  Description: #{@about}"
                 when "list"
                     menu
                 when "exit"
