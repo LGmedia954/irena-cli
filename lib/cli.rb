@@ -16,7 +16,7 @@ class CLI
     def menu
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
         choices.each.with_index(1) do |option, i|
-        puts "#{i}. #{option}".colorize(:green)
+        puts "#{i}. #{option}".colorize(:light_green)
         end
         puts "\n Please enter a number 1-7.\n To return to this menu at any time, type LIST.\n"
     end
@@ -28,25 +28,25 @@ class CLI
             case input
             
                 when "1"
-                    #puts "Bioenergy"
-                    Irena::Scraper.get_bioenergy
+                    puts "BIOENERGY".colorize(:green)
+                    Irena::EnergyScraper.new(bio)
                 when "2"
-                    puts "Geothermal"
+                    puts "GEOTHERMAL".colorize(:light_red)
                     #Irena::Scraper.get_geothermal
                 when "3"
-                    puts "Hydropower"
+                    puts "HYDROPOWER".colorize(:blue)
                     #Irena::Scraper.get_hydropower
                 when "4"
-                    puts "Ocean"
+                    puts "OCEAN".colorize(:cyan)
                     #Irena::Scraper.get_ocean
                 when "5"
-                    puts "Solar"
+                    puts "SOLAR".colorize(:light_yellow)
                     #Irena::Scraper.get_solar
                 when "6"
-                    puts "Wind"
+                    puts "WIND".colorize(:white)
                     #Irena::Scraper.get_wind
                 when "7"
-                    puts "About"
+                    puts "ABOUT".colorize(:light_magenta)
                     #Irena::Scraper.get_about
                 when "list"
                     menu
