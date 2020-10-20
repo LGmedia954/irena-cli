@@ -32,22 +32,22 @@ class CLI
                     Irena::EnergyScraper.new(bio)
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    #Irena::Scraper.get_geothermal
+                    #Irena::EnergyScraper.new
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    #Irena::Scraper.get_hydropower
+                    #Irena::EnergyScraper.new
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    #Irena::Scraper.get_ocean
+                    #Irena::EnergyScraper.new
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    #Irena::Scraper.get_solar
+                    #Irena::EnergyScraper.new
                 when "6"
                     puts "WIND".colorize(:white)
-                    #Irena::Scraper.get_wind
+                    #Irena::EnergyScraper.new
                 when "7"
                     puts "ABOUT".colorize(:light_magenta)
-                    #Irena::Scraper.get_about
+                    #Irena::EnergyScraper.new
                 when "list"
                     menu
                 when "exit"

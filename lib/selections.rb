@@ -13,14 +13,7 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :abou
     def self.all
         @@all
     end
-
-    def read(name)
-        @energies << name
-    end
-
-    def energies
-        @energies
-    end
+    
 
     #Constructor
     def self.new_from_renewables(url)
