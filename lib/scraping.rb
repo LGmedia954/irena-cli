@@ -24,6 +24,29 @@ class EnergyScraper
       energy
   end
 
+
+    def self.print_renewables(input)
+      case input
+            
+      when "1"
+        return energy[:bioenergy]
+      when "2"
+        return energy[:geothermal]
+      when "3"
+        return energy[:hydropower]
+      when "4"
+        return energy[:ocean]
+      when "5"
+        return energy[:solar]
+      when "6"
+        return energy[:wind]
+      when "7"
+        return energy[:about]
+      
+      end
+    end
+
+
 end
 
 end
