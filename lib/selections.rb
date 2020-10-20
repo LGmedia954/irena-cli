@@ -16,7 +16,7 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :abou
         @@all
     end
 
-
+    
     #Constructor
     def self.new_from_renewables(url)
         Energy.new.tap do |energy|

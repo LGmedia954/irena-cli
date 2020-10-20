@@ -3,7 +3,7 @@ module Irena
 class EnergyScraper
 
   def self.renewables(url)
-      # We filled in the energies data
+    
       bio = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
       geo = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
       hydro = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
