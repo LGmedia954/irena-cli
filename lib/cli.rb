@@ -29,25 +29,25 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    Energy.new_from_renewables("https://www.irena.org/bioenergy")
+                    #How do I print this scrape? "  #{@bioenergy}"
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    #puts "  #{Energy.geothermal}"
+                    #How do I print this scrape? "  #{@geothermal}"
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    #puts "  #{Energy.hydropower}"
+                    #How do I print this scrape? "  #{@hydropower}"
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    #puts "  #{Energy.ocean}"
+                    #How do I print this scrape? "  #{@ocean}"
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    #puts "  #{Energy.solar}"
+                    #How do I print this scrape? "  #{@solar}"
                 when "6"
                     puts "WIND".colorize(:white)
-                    #puts "  #{Energy.wind}"
+                    #How do I print this scrape? "  #{@wind}"
                 when "7"
                     puts "ABOUT".colorize(:light_magenta)
-                    #puts "  #{Energy.about}"
+                    #How do Io print this scrape? "  #{@about}"
                 when "list"
                     menu
                 when "exit"

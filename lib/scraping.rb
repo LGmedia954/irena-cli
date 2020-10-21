@@ -25,12 +25,6 @@ class EnergyScraper
 
   end
 
-  #def self.print_energies(**energy)
-    #puts energy.inspect
-  #end
-
-  #self.print_energies(energy: "value")
-
 
 end
 
