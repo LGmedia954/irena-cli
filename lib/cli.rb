@@ -29,25 +29,25 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    puts "  #{Energy.bioenergy}"
+                    Energy.new_from_renewables("https://www.irena.org/bioenergy")
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    puts "  #{Energy.geothermal}"
+                    #puts "  #{Energy.geothermal}"
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    puts "  #{Energy.hydropower}"
+                    #puts "  #{Energy.hydropower}"
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    puts "  #{Energy.ocean}"
+                    #puts "  #{Energy.ocean}"
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    puts "  #{Energy.solar}"
+                    #puts "  #{Energy.solar}"
                 when "6"
                     puts "WIND".colorize(:white)
-                    puts "  #{Energy.wind}"
+                    #puts "  #{Energy.wind}"
                 when "7"
                     puts "ABOUT".colorize(:light_magenta)
-                    puts "  #{Energy.about}"
+                    #puts "  #{Energy.about}"
                 when "list"
                     menu
                 when "exit"
