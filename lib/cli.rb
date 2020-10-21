@@ -18,7 +18,7 @@ class CLI
         choices.each.with_index(1) do |option, i|
         puts "#{i}. #{option}".colorize(:light_green)
         end
-        puts "\n Please enter a number 1-7.\n To return to this menu at any time, type LIST.\n"
+        puts "\n Please enter a number 1-7.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT."
     end
   
     def get_user_input
@@ -29,25 +29,25 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    #How do I print this scrape? "  #{@bioenergy}"
+
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    #How do I print this scrape? "  #{@geothermal}"
+                    
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    #How do I print this scrape? "  #{@hydropower}"
+                    
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    #How do I print this scrape? "  #{@ocean}"
+                    
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    #How do I print this scrape? "  #{@solar}"
+                    
                 when "6"
                     puts "WIND".colorize(:white)
-                    #How do I print this scrape? "  #{@wind}"
+                    
                 when "7"
                     puts "ABOUT".colorize(:light_magenta)
-                    #How do Io print this scrape? "  #{@about}"
+                    
                 when "list"
                     menu
                 when "exit"

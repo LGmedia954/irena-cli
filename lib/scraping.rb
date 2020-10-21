@@ -26,6 +26,29 @@ class EnergyScraper
   end
 
 
+#  def self.print_renewables(input)
+ #   EnergyScraper.renewables(url).each do |k,v|
+  #      case input
+
+   #     when "1"
+   #       print "#{energy}:#{bioenergy}"
+   #     when "2"  
+   #       print "#{energy}:#{geothermal}"
+   #     when "3"
+   #       print "#{energy}:#{hydropower}"
+   #     when "4"
+   #       print "#{energy}:#{ocean}"
+   #     when "5"
+   #       print "#{energy}:#{solar}"
+   #     when "6"
+   #      print "#{energy}:#{wind}"
+   #     when "7"
+   #       print "#{energy}:#{about}"
+   #     end
+   #  end
+#  end
+
+
 end
 
 end
