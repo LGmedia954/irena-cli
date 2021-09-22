@@ -2,17 +2,17 @@
 
 README file contains the following sections:
 
-[ ] A short description
-[ ] Install instructions
-[ ] A contributor's guide
-[ ] A link to the license for your code
+[x] A short description
+[x] Install instructions
+[x] A contributor's guide
+[x] A link to the license for your code
 
 CLI Essentials:
 
 [ ] Have a CLI for interfacing with the application
 [ ] Pull data from an external source
 [ ] Implement both list and detail views. The data provided must go at least one level deep.
-[ ] The application is pretty DRY
+[x] The application is pretty DRY
 
 Ruby Essentials:
 
