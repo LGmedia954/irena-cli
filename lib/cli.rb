@@ -75,7 +75,7 @@ class CLI
     end
 
     def close
-        puts "\n Thank you for your interest in renewable energy.\n It was delightful meeting you today!".colorize(:cyan)
+        puts "\n Thank you for your interest in renewable energy!".colorize(:cyan)
     end
   
 end
