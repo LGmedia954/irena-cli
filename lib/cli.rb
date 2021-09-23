@@ -36,34 +36,32 @@ class CLI
     end
   
     def get_user_input
-        input = nil
+        @input = input
         while input != "exit"
-            self.input = gets.strip
+            input = gets.strip.downcase
+            process_input
             case input
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    #return
 
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    #return
                     
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    #return
                     
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    #return
                     
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    #return
                     
                 when "6"
                     puts "WIND".colorize(:white)
-                    #return
+                    
+                when "7"
+                    puts "ABOUT".colorize(:light_magenta)
                     
                 when "list"
                     menu
@@ -71,15 +69,15 @@ class CLI
                     close
                 else
                     puts "Invalid input. Please try again.".colorize(:red)
-            
+        
             end
-
-            if ["1", "2", "3", "4", "5", "6"].include?(@input)
-              Irena::EnergyScraper.new.fetch_renewables(EnergyScraper::ENERGY_LINKS[@input][:url]), EnergyScraper::ENERGY_LINKS[@input][])
-
-            end
-
         end
+    end
+
+    def process_input
+      if ["1", "2", "3", "4", "5", "6"].include?(@input)
+        Irena::EnergyScraper.new.fetch_renewables(EnergyScraper::ENERGY_LINKS[@input][:url], EnergyScraper::ENERGY_LINKS[@input][])
+      end
     end
 
     def close
