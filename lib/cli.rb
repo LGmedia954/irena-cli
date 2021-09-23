@@ -13,10 +13,9 @@ class CLI
     # unify the Energy scrapes for the same type of css element.
 
     def intro
-        puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
-        puts"\n I support world countries in their transition to a sustainable energy future.\n\n
-
-        IRENA stands for the International Renewable Energy Agency.\n
+        puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
+        puts "IRENA stands for the International Renewable Energy Agency.\n".colorize(:yellow) 
+        puts "I support world countries in their transition to a sustainable energy future.\n
         With nearly 200 countries actively engaged, I promote renewable resources and technologies\n 
         as the key to a sustainable future and help countries achieve their renewable energy potential.\n\n
         
