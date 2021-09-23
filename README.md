@@ -4,21 +4,21 @@ DESCRIPTION
 
 Renewable Energy CLI Project
 
-This application provides a brief overview about renewable energy to build back better.
+This application offers a brief overview of renewable energies and an introduction to the organization IRENA.
 
 We are overly dependent on fossil fuels. Some environments, especially islands in particular, are not well suited for fossil fuels and tethered power grids.
 
-The goal of this app is to help raise awareness of renewable energy sources and lead the user to seek possible funding and growth initiatives.
+The goal of this app is to help raise awareness of different renewable energy sources and inspire the user to seek out clean energy initiatives.
 
 USAGE
 
-Follow the menu prompts. Enter your selection with the numbers 1-7. View the descriptions of your choice, then exit when done.
+Follow the menu prompts. Enter your selection with the numbers 1-6. View the descriptions of your choice, then exit when done.
 
 INSTALLATION
 
 Fork the Github repository to your IDE, then execute by entering "bin/irena" in your terminal.
 
-CONTRIBUTORS GUIDE1
+CONTRIBUTORS GUIDE
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/LGmedia954/irena-cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
