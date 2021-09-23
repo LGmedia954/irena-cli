@@ -4,7 +4,7 @@ module Irena
 
 class EnergyScraper
 
-  energy_links = {
+  ENERGY_LINKS = {
     "1" => {
       resource: "bioenergy",
       url: "https://www.irena.org/bioenergy"
@@ -41,9 +41,18 @@ class EnergyScraper
     end
   end
 
+  def description
+    @description ||= self.get_page(url).css("p.center-right-border").text.strip.gsub(/\s+/,' ')
+  end  
 
+  def print_description
+    puts ""
+    puts "#{@description}"
+    puts "----------------------"
+    puts ""
+  end
   
-  
+
 
 end
 

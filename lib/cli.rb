@@ -73,7 +73,7 @@ class CLI
 
     def process_input
       if ["1", "2", "3", "4", "5", "6"].include?(@input)
-        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.energy_links[@input][:url], Irena::EnergyScraper.energy_links[@input][])
+        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.ENERGY_LINKS[@input][:url], Irena::EnergyScraper.ENERGY_LINKS[@input][])
       end
     end
 
