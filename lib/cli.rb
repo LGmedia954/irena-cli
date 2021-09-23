@@ -17,13 +17,13 @@ class CLI
     def intro
         puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
         puts "IRENA stands for the International Renewable Energy Agency.\n".colorize(:yellow) 
-        puts "I support world countries in their transition to a sustainable energy future.\n
-        With nearly 200 countries actively engaged, I serve as the principal platform for\n 
-        innovative cooperation, with a centre of excellence and a repository of policy,\n 
-        technology, resources, and financial knowledge on renewable energy.\n\n
+        puts "     I support world countries in their transition to a sustainable energy future.
+        With nearly 200 countries actively engaged, I serve as the principal platform for
+        innovative cooperation, with a centre of excellence and a repository of policy,
+        technology, resources, and financial knowledge on renewable energy.\n
 
-        I promote the widespread adoption and sustainable use of all forms of\n 
-        renewable energy in the pursuit of sustainable development, energy access,\n 
+        I promote the widespread adoption and sustainable use of all forms of
+        renewable energy in the pursuit of sustainable development, energy access,
         energy security, and low-carbon economic growth and prosperity.\n".colorize(:cyan)
     end
    
@@ -60,9 +60,6 @@ class CLI
                 when "6"
                     puts "WIND".colorize(:white)
                     
-                when "7"
-                    puts "ABOUT".colorize(:light_magenta)
-                    
                 when "list"
                     menu
                 when "exit"
@@ -76,7 +73,7 @@ class CLI
 
     def process_input
       if ["1", "2", "3", "4", "5", "6"].include?(@input)
-        Irena::EnergyScraper.new.fetch_renewables(EnergyScraper::ENERGY_LINKS[@input][:url], EnergyScraper::ENERGY_LINKS[@input][])
+        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.energy_links[@input][:url], Irena::EnergyScraper.energy_links[@input][])
       end
     end
 

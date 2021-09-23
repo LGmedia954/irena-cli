@@ -4,7 +4,7 @@ module Irena
 
 class EnergyScraper
 
-  ENERGY_LINKS = {
+  energy_links = {
     "1" => {
       resource: "bioenergy",
       url: "https://www.irena.org/bioenergy"
@@ -41,16 +41,9 @@ class EnergyScraper
     end
   end
 
+
   
-
-
-      #energy[:bioenergy] = bio.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:geothermal] = geo.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:hydropower] = hydro.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:ocean] = seas.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:solar] = sun.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:wind] = air.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-
+  
 
 end
 
