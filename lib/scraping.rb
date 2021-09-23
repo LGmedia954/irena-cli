@@ -10,7 +10,6 @@ class EnergyScraper
       #seas = Nokogiri::HTML(open("https://www.irena.org/ocean"))
       #sun = Nokogiri::HTML(open("https://www.irena.org/solar"))
       #air = Nokogiri::HTML(open("https://www.irena.org/wind"))
-      #org = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
       
       energy = {}
 
@@ -20,7 +19,6 @@ class EnergyScraper
       #energy[:ocean] = seas.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
       #energy[:solar] = sun.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
       #energy[:wind] = air.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      #energy[:about] = org.search("span.center-right-border").text.strip.gsub(/\s+/,' ')
 
       energy
 
@@ -29,7 +27,7 @@ class EnergyScraper
 
 #  def self.print_renewables(input)
  #   EnergyScraper.renewables(url).each do |k,v|
-  #      case input
+  #    case input
 
    #     when "1"
    #       print "#{energy}:#{bioenergy}"
@@ -43,9 +41,8 @@ class EnergyScraper
    #       print "#{energy}:#{solar}"
    #     when "6"
    #      print "#{energy}:#{wind}"
-   #     when "7"
-   #       print "#{energy}:#{about}"
-   #     end
+   #     
+   #    end
    #  end
 #  end
 
