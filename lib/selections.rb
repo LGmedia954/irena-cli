@@ -9,7 +9,7 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind
     # Hook
     def initialize(bioenergy, geothermal, hydropower, ocean, solar, wind)
         @bioenergy = bioenergy
-        @geothermal = bioenergy
+        @geothermal = geothermal
         @hydropower = hydropower
         @ocean = ocean
         @solar = solar
@@ -33,7 +33,7 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind
     #Constructor
     def self.new_from_renewables(url)
         Energy.new.tap do |energy|
-          EnergyScraper.renewables(url).each do |k,v|
+          EnergyScraper.fetch_renewables(url).each do |k,v|
             energy.send("#{k}=", v) # Mass Assignment
           end
         end

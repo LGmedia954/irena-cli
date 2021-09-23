@@ -1,8 +1,10 @@
 module Irena
 
+  attr_accessor :description
+
 class EnergyScraper
 
-  energy_links = {
+  ENERGY_LINKS = {
     "1" => {
       resource: "bioenergy",
       url: "https://www.irena.org/bioenergy"
@@ -29,16 +31,17 @@ class EnergyScraper
     }
   }
 
-
   def get_page(url)
     Nokogiri::HTML(open(url))
   end
 
-  def fetch_descriptions(url)
-    self.get_page(url).search("p.center-right-border").each do |page|
-      Irena::Selections.new_from_renewables(url)
+  def fetch_renewables(url, *args)
+    self.get_page(url).css("p.center-right-border").each do |page|
+      Irena::Selections.new_from_renewables(page, *args)
     end
   end
+
+  
 
 
       #energy[:bioenergy] = bio.search("p.center-right-border").text.strip.gsub(/\s+/,' ')

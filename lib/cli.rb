@@ -1,6 +1,8 @@
 module Irena
 
 class CLI
+
+    attr_accessor :input
    
     def call
         intro
@@ -36,7 +38,7 @@ class CLI
     def get_user_input
         input = nil
         while input != "exit"
-            input = gets.strip.downcase
+            self.input = gets.strip
             case input
             
                 when "1"
@@ -71,11 +73,18 @@ class CLI
                     puts "Invalid input. Please try again.".colorize(:red)
             
             end
+
+            if ["1", "2", "3", "4", "5", "6"].include?(@input)
+              Irena::EnergyScraper.new.fetch_renewables(EnergyScraper::ENERGY_LINKS[@input][:url]), EnergyScraper::ENERGY_LINKS[@input][])
+
+            end
+
         end
     end
 
     def close
         puts "\n Thank you for your interest in renewable energy!".colorize(:cyan)
+        puts ""
     end
   
 end
