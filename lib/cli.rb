@@ -8,17 +8,31 @@ class CLI
         get_user_input
     end
 
+    # I decided to eliminate Option 7 and its scrape and 
+    # place the About paragraph below instead, so that I may 
+    # unify the Energy scrapes that use the same type of css element.
+
     def intro
         puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
-        puts"\n I support countries in their transition to a sustainable energy future.\n IRENA stands for the International Renewable Energy Agency.\n With more than 180 countries actively engaged, IRENA promotes\n renewable resources and technologies as the key to a sustainable future\n and helps countries achieve their renewable energy potential.\n".colorize(:cyan)
+        puts"\n I support world countries in their transition to a sustainable energy future.\n\n
+
+        IRENA stands for the International Renewable Energy Agency.\n
+        With nearly 200 countries actively engaged, I promote renewable resources and technologies\n 
+        as the key to a sustainable future and help countries achieve their renewable energy potential.\n\n
+        
+        I serve as the principal platform for international cooperation, a centre of excellence,\n 
+        and a repository of policy, technology, resources, and financial knowledge on renewable energy.\n 
+        I promote the widespread adoption and sustainable use of all forms of renewable energy\n 
+        in the pursuit of sustainable development, energy access, energy security,\n 
+        and low-carbon economic growth and prosperity.\n".colorize(:cyan)
     end
    
     def menu
-        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
+        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
         choices.each.with_index(1) do |option, i|
-        puts "#{i}. #{option}".colorize(:light_green)
+          puts "#{i}. #{option}".colorize(:light_green)
         end
-        puts "\n Please enter a number 1-7.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT."
+        puts "\n Please enter a number 1-6.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT."
     end
   
     def get_user_input
@@ -44,9 +58,6 @@ class CLI
                     
                 when "6"
                     puts "WIND".colorize(:white)
-                    
-                when "7"
-                    puts "ABOUT".colorize(:light_magenta)
                     
                 when "list"
                     menu
