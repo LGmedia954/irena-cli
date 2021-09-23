@@ -9,21 +9,20 @@ class CLI
     end
 
     # I decided to eliminate Option 7 and its scrape and 
-    # place the About paragraph below instead, so that I may 
-    # unify the Energy scrapes for the same type of css element.
+    # instead place the About paragraph below, so that I may 
+    # unify the 6 Energy scrapes for the same CSS element.
 
     def intro
         puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
         puts "IRENA stands for the International Renewable Energy Agency.\n".colorize(:yellow) 
         puts "I support world countries in their transition to a sustainable energy future.\n
-        With nearly 200 countries actively engaged, I promote renewable resources and technologies\n 
-        as the key to a sustainable future and help countries achieve their renewable energy potential.\n\n
-        
-        I serve as the principal platform for international cooperation, a centre of excellence,\n 
-        and a repository of policy, technology, resources, and financial knowledge on renewable energy.\n 
-        I promote the widespread adoption and sustainable use of all forms of renewable energy\n 
-        in the pursuit of sustainable development, energy access, energy security,\n 
-        and low-carbon economic growth and prosperity.\n".colorize(:cyan)
+        With nearly 200 countries actively engaged, I serve as the principal platform for\n 
+        innovative cooperation, with a centre of excellence and a repository of policy,\n 
+        technology, resources, and financial knowledge on renewable energy.\n\n
+
+        I promote the widespread adoption and sustainable use of all forms of\n 
+        renewable energy in the pursuit of sustainable development, energy access,\n 
+        energy security, and low-carbon economic growth and prosperity.\n".colorize(:cyan)
     end
    
     def menu
@@ -42,21 +41,27 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
+                    #return
 
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
+                    #return
                     
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
+                    #return
                     
                 when "4"
                     puts "OCEAN".colorize(:cyan)
+                    #return
                     
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
+                    #return
                     
                 when "6"
                     puts "WIND".colorize(:white)
+                    #return
                     
                 when "list"
                     menu
@@ -64,7 +69,7 @@ class CLI
                     close
                 else
                     puts "Invalid input. Please try again.".colorize(:red)
-        
+            
             end
         end
     end

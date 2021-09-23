@@ -9,17 +9,17 @@ README file contains the following sections:
 
 CLI Essentials:
 
-[ ] Have a CLI for interfacing with the application
+[x] Have a CLI for interfacing with the application
 [ ] Pull data from an external source
 [ ] Implement both list and detail views. The data provided must go at least one level deep.
 [x] The application is pretty DRY
 
 Ruby Essentials:
 
-[ ] Basic control flow - how "if" statements work
-[ ] Variable scopes - method, instance and class
-[ ] Object instantiation - #new (and possibly #initialize)
-[ ] The meaning of the "self" keyword
-[ ] Method types - class vs. instance methods
+[x] Basic control flow - how "if" statements work
+[x] Variable scopes - method, instance and class
+[x] Object instantiation - #new (and possibly #initialize)
+[x] The meaning of the "self" keyword
+[x] Method types - class vs. instance methods
 [ ] Method return types - knowing what methods return
-[ ] Iterating through collections - at least using #each with a block
+[x] Iterating through collections - at least using #each with a block
