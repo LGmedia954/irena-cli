@@ -2,7 +2,7 @@ module Irena
 
 class Energy
 
-attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :about
+attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind
 
 @@all = []
 

@@ -10,7 +10,7 @@ class CLI
 
     # I decided to eliminate Option 7 and its scrape and 
     # place the About paragraph below instead, so that I may 
-    # unify the Energy scrapes that use the same type of css element.
+    # unify the Energy scrapes for the same type of css element.
 
     def intro
         puts "#######---Hello! My name is IRENA.---#######".colorize(:yellow)
