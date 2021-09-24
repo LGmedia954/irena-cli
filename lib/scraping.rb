@@ -36,7 +36,7 @@ class EnergyScraper
   end
 
   def fetch_renewables(url)
-    self.get_page(url).css("p.center-right-border").each do |link|
+    self.get_page(url).css("p.center-right-border").each do |energy|
       Irena::Selections.new_from_renewables(url)
     end
   end
