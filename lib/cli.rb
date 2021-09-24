@@ -32,7 +32,7 @@ class CLI
         choices.each.with_index(1) do |option, i|
           puts "#{i}. #{option}".colorize(:light_green)
         end
-        puts "\n Please enter a number 1-6.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT."
+        puts "\n Please enter a number 1-6.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
     end
   
     def get_user_input
@@ -79,7 +79,7 @@ class CLI
 
     def process_input
       if ["1", "2", "3", "4", "5", "6"].include?(@input)
-        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.ENERGY_LINKS[@input][:url], Irena::EnergyScraper.ENERGY_LINKS[@input][])
+        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.ENERGY_LINKS[@input][:url])
       end
     end
 

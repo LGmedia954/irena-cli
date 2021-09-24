@@ -35,14 +35,14 @@ class EnergyScraper
     Nokogiri::HTML(open(url))
   end
 
-  def fetch_renewables(url, *args)
-    self.get_page(url).css("p.center-right-border").each do |page|
-      Irena::Selections.new_from_renewables(page, *args)
+  def fetch_renewables(url)
+    self.get_page(url).css("p.center-right-border").each do |link|
+      Irena::Selections.new_from_renewables(url)
     end
   end
 
   def description
-    @description ||= self.get_page(url).css("p.center-right-border").text.strip#.gsub(/\s+/,' ')
+    @description ||= self.get_page(url).css("p.center-right-border").text#.strip.gsub(/\s+/,' ')
   end
   
 
