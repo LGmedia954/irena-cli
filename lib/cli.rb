@@ -44,21 +44,27 @@ class CLI
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
+                    print_description
 
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
+                    print_description
                     
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
+                    print_description
                     
                 when "4"
                     puts "OCEAN".colorize(:cyan)
+                    print_description
                     
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
+                    print_description
                     
                 when "6"
                     puts "WIND".colorize(:white)
+                    print_description
                     
                 when "list"
                     menu
@@ -75,6 +81,12 @@ class CLI
       if ["1", "2", "3", "4", "5", "6"].include?(@input)
         Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.ENERGY_LINKS[@input][:url], Irena::EnergyScraper.ENERGY_LINKS[@input][])
       end
+    end
+
+    def print_description
+        puts ""
+        puts "#{@description}".colorize(:light_white)
+        puts "=" * 50
     end
 
     def close

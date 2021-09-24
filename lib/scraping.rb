@@ -42,14 +42,7 @@ class EnergyScraper
   end
 
   def description
-    @description ||= self.get_page(url).css("p.center-right-border").text.strip.gsub(/\s+/,' ')
-  end  
-
-  def print_description
-    puts ""
-    puts "#{@description}"
-    puts "----------------------"
-    puts ""
+    @description ||= self.get_page(url).css("p.center-right-border").text.strip#.gsub(/\s+/,' ')
   end
   
 
