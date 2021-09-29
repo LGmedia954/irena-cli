@@ -16,7 +16,7 @@ Follow the menu prompts. Enter your selection with the numbers 1-6. View the des
 
 INSTALLATION
 
-Fork the Github repository to your IDE, then execute by entering "bin/irena" in your terminal.
+To use this app, clone the repository, run bundle install for the necessary gems, then execute by entering "bin/irena" in your terminal.
 
 CONTRIBUTORS GUIDE
 

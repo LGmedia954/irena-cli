@@ -1,6 +1,6 @@
 module Irena
 
-class CLI
+class CLI     # Menu actions
 
     attr_accessor :input
    
@@ -32,11 +32,11 @@ class CLI
         choices.each.with_index(1) do |option, i|
           puts "#{i}. #{option}".colorize(:light_green)
         end
-        puts "\n Please enter a number 1-6.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
+        puts "\n Please enter a number 1-#{ENERGY_TYPES.length}.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
     end
   
     def get_user_input
-        @input = input
+        input = nil
         while input != "exit"
             input = gets.strip.downcase
             process_input
@@ -78,9 +78,9 @@ class CLI
     end
 
     def process_input
-      if ["1", "2", "3", "4", "5", "6"].include?(@input)
-        Irena::EnergyScraper.new.fetch_renewables(Irena::EnergyScraper.ENERGY_LINKS[@input][:url], Irena::EnergyScraper.ENERGY_LINKS[@input][:resource])
-      end
+        @input = gets.strip.downcase
+        idx = @input.to_i - 1
+        valid = (0...ENERGY_TYPES.length).to_a.include?(@input.to_i - 1)
     end
 
     def print_description

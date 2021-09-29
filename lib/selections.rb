@@ -2,7 +2,7 @@ module Irena
 
 class Energy
 
-attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind
+attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :description
 
 @@all = []
 
@@ -31,13 +31,15 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind
     end
 
     #Constructor
-    def self.new_from_renewables(url)
-        Energy.new.tap do |energy|
-          EnergyScraper.fetch_renewables(url).each do |k,v|
-            energy.send("#{k}=", v) # Mass Assignment
-          end
+    def self.new_from_renewables()
+      @description = description
+      Energy.new.tap do |energy|
+        EnergyScraper.scrape_info.each do |description|
+          energy.send("#{description}")
         end
+      end
     end
+
 
 end
 
