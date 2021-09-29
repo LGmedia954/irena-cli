@@ -18,7 +18,7 @@ class EnergyScraper
   end
 
   def scrape_info(url)
-    self.fetch_renewables(url).css('div.center-right-border p')
+    self.fetch_renewables(url).css('div.center-right-border > p').text
   end
 
 
