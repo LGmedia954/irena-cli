@@ -5,23 +5,21 @@ class EnergyScraper
   attr_accessor :root_url
 
 
-  ENERGY_TYPES = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
+  ENERGY_TYPES = [ "bioenergy", "geothermal", "hydropower", "ocean", "solar", "wind" ]
 
 
-  def get_page(url)
-    Nokogiri::HTML(open(url))
+  def fetch_renewables(url)
+    ENERGY_TYPES[0] = Nokogiri::HTML(URI.open('https://www.irena.org/bioenergy'))
+    ENERGY_TYPES[1] = Nokogiri::HTML(URI.open('https://www.irena.org/geothermal'))
+    ENERGY_TYPES[2] = Nokogiri::HTML(URI.open('https://www.irena.org/hydropower'))
+    ENERGY_TYPES[3] = Nokogiri::HTML(URI.open('https://www.irena.org/ocean'))
+    ENERGY_TYPES[4] = Nokogiri::HTML(URI.open('https://www.irena.org/solar'))
+    ENERGY_TYPES[5] = Nokogiri::HTML(URI.open('https://www.irena.org/wind'))
   end
 
   def scrape_info(url)
-    self.get_page(url).css("p.center-right-border").each do |energy|
-      return 
-    end
+    self.fetch_renewables(url).css('div.center-right-border p')
   end
-
-  def description
-    @description ||= self.get_page(url).css("p.center-right-border").text#.strip.gsub(/\s+/,' ')
-  end
-  
 
 
 end

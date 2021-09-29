@@ -10,7 +10,7 @@ README file contains the following sections:
 CLI Essentials:
 
 [x] Have a CLI for interfacing with the application
-[ ] Pull data from an external source
+[x] Pull data from an external source
 [ ] Implement both list and detail views. The data provided must go at least one level deep.
 [x] The application is pretty DRY
 

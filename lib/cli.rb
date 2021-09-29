@@ -32,7 +32,8 @@ class CLI     # Menu actions
         choices.each.with_index(1) do |option, i|
           puts "#{i}. #{option}".colorize(:light_green)
         end
-        puts "\n Please enter a number 1-#{ENERGY_TYPES.length}.\n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
+        puts "\n Please enter a number 1-#{Irena::EnergyScraper::ENERGY_TYPES.length}.
+        \n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
     end
   
     def get_user_input
@@ -80,7 +81,7 @@ class CLI     # Menu actions
     def process_input
         @input = gets.strip.downcase
         idx = @input.to_i - 1
-        valid = (0...ENERGY_TYPES.length).to_a.include?(@input.to_i - 1)
+        valid = (0...Irena::EnergyScraper::ENERGY_TYPES.length).to_a.include?(@input.to_i - 1)
     end
 
     def print_description

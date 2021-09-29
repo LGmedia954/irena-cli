@@ -30,14 +30,19 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :desc
       self.all[input.to_i-1]
     end
 
-    #Constructor
-    def self.new_from_renewables()
+    def description
       @description = description
-      Energy.new.tap do |energy|
-        EnergyScraper.scrape_info.each do |description|
-          energy.send("#{description}")
+
+    end
+
+ 
+ #Constructor
+    def self.new_from_renewables(url)
+        Energy.new.tap do |energy|
+          EnergyScraper.fetch_renewables(url).each do |k,v|
+            energy.send("#{k}=", v) # Mass Assignment
+          end
         end
-      end
     end
 
 

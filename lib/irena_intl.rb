@@ -1,6 +1,6 @@
 require 'pry'
-require "open-uri"
-require "nokogiri"
+require 'open-uri'
+require 'nokogiri'
 require 'colorize'
 require 'colorized_string'
 
