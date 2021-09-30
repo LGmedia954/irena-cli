@@ -2,18 +2,14 @@ module Irena
 
 class Energy
 
-attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :description
+attr_accessor :name, :description
 
 @@all = []
 
     # Hook
-    def initialize(bioenergy, geothermal, hydropower, ocean, solar, wind)
-        @bioenergy = bioenergy
-        @geothermal = geothermal
-        @hydropower = hydropower
-        @ocean = ocean
-        @solar = solar
-        @wind = wind
+    def initialize(name, description)
+        @name = name
+        @description = description
         @@all << self
     end
      
@@ -21,20 +17,7 @@ attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :desc
     def self.all
         @@all  # accessible to the entire class
     end
-
-    def self.reset
-      @@all.clear
-    end
-
-    def self.find(input)
-      self.all[input.to_i-1]
-    end
-
-    def description
-      @description = description
-
-    end
-
+        
  
  #Constructor
     def self.new_from_renewables(url)
