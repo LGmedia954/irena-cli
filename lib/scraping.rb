@@ -4,9 +4,11 @@ class EnergyScraper
 
   attr_accessor :root_url
 
+  def initialize(root_url)
+    @root_url = url
+  end
 
   ENERGY_TYPES = [ "bioenergy", "geothermal", "hydropower", "ocean", "solar", "wind" ]
-
 
   def fetch_renewables(url)
     ENERGY_TYPES[0] = Nokogiri::HTML(URI.open('https://www.irena.org/bioenergy'))
@@ -17,11 +19,20 @@ class EnergyScraper
     ENERGY_TYPES[5] = Nokogiri::HTML(URI.open('https://www.irena.org/wind'))
   end
 
-  def scrape_info(url)
+  def get_details(url)
     self.fetch_renewables(url).css('div.center-right-border > p').text
   end
 
-  # Still playing around with regex for the paragraph spacing.
+  # Still playing around with regex for the paragraph spacing of results.
+
+
+  #Below is pseudo code
+  def self.new(*args)
+    self.fetch_renewables(url)
+    self.get_details(url)
+    @description << self.get_details(url)
+  end
+
 
 
 end
