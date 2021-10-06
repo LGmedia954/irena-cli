@@ -60,11 +60,11 @@ class CLI     # Menu actions
                     p Irena::EnergyScraper::get_ocean
                     
                 when "5"
-                    puts "SOLAR".colorize(:light_yellow)
+                    puts "SOLAR".colorize(:yellow)
                     p Irena::EnergyScraper::get_solar
                     
                 when "6"
-                    puts "WIND".colorize(:white)
+                    puts "WIND".colorize(:light_white)
                     p Irena::EnergyScraper::get_wind
                     
                 when "list"
