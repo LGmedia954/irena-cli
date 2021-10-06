@@ -45,27 +45,27 @@ class CLI     # Menu actions
             
                 when "1"
                     puts "BIOENERGY".colorize(:green)
-                    print_description
+                    p Irena::EnergyScraper::get_bioenergy
 
                 when "2"
                     puts "GEOTHERMAL".colorize(:light_red)
-                    print_description
+                    p Irena::EnergyScraper::get_geothermal
                     
                 when "3"
                     puts "HYDROPOWER".colorize(:blue)
-                    print_description
+                    p Irena::EnergyScraper::get_hydropower
                     
                 when "4"
                     puts "OCEAN".colorize(:cyan)
-                    print_description
+                    p Irena::EnergyScraper::get_ocean
                     
                 when "5"
                     puts "SOLAR".colorize(:light_yellow)
-                    print_description
+                    p Irena::EnergyScraper::get_solar
                     
                 when "6"
                     puts "WIND".colorize(:white)
-                    print_description
+                    p Irena::EnergyScraper::get_wind
                     
                 when "list"
                     menu
@@ -82,12 +82,6 @@ class CLI     # Menu actions
         @input = gets.strip.downcase
         idx = @input.to_i - 1
         valid = (0...Irena::EnergyScraper::ENERGY_TYPES.length).to_a.include?(@input.to_i - 1)
-    end
-
-    def print_description
-        puts ""
-        puts "#{@description}".colorize(:light_white)
-        puts "=" * 50
     end
 
     def close

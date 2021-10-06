@@ -42,7 +42,6 @@ class EnergyScraper
   end
 
 
-
 end
 
 end
