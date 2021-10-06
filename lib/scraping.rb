@@ -19,18 +19,34 @@ class EnergyScraper
     ENERGY_TYPES[5] = Nokogiri::HTML(URI.open('https://www.irena.org/wind'))
   end
 
-  def self.get_details(url)
-    fetch_renewables(url).css('div.center-right-border > p').text
+  def self.get_bioenergy(url)
+    self.fetch_renewables(url)
+    ENERGY_TYPES[0].css('div.center-right-border > p').text
   end
 
-  # Still playing around with regex for the paragraph spacing of results.
-
-
-  #Below is pseudo code
-  def self.new(*args)
+  def self.get_geothermal(url)
     self.fetch_renewables(url)
-    self.get_details(url)
-    @description << self.get_details(url)
+    ENERGY_TYPES[1].css('div.center-right-border > p').text
+  end
+
+  def self.get_hydropower(url)
+    self.fetch_renewables(url)
+    ENERGY_TYPES[2].css('div.center-right-border > p').text
+  end
+  
+  def self.get_ocean(url)
+    self.fetch_renewables(url)
+    ENERGY_TYPES[3].css('div.center-right-border > p').text
+  end
+  
+  def self.get_solar(url)
+    self.fetch_renewables(url)
+    ENERGY_TYPES[4].css('div.center-right-border > p').text
+  end
+  
+  def self.get_wind(url)
+    self.fetch_renewables(url)
+    ENERGY_TYPES[5].css('div.center-right-border > p').text
   end
 
 
