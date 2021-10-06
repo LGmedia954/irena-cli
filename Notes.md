@@ -11,7 +11,7 @@ CLI Essentials:
 
 [x] Have a CLI for interfacing with the application
 [x] Pull data from an external source
-[ ] Implement both list and detail views. The data provided must go at least one level deep.
+[x] Implement both list and detail views. The data provided must go at least one level deep.
 [x] The application is pretty DRY
 
 Ruby Essentials:
@@ -21,5 +21,5 @@ Ruby Essentials:
 [x] Object instantiation - #new (and possibly #initialize)
 [x] The meaning of the "self" keyword
 [x] Method types - class vs. instance methods
-[ ] Method return types - knowing what methods return
+[x] Method return types - knowing what methods return
 [x] Iterating through collections - at least using #each with a block
