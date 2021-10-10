@@ -20,13 +20,13 @@ attr_accessor :name, :description
         @@all  # accessible to the entire class
     end
 
-    def self.reset
-      @@all.clear
-    end
+    # def self.reset
+    #   @@all.clear
+    # end
 
-    def description
-      @description
-    end
+    # def description
+    #   @description
+    # end
  
     
     def self.new(name, description)  #Constructor
