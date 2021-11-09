@@ -5,6 +5,7 @@ class CLI     # Menu actions
     attr_accessor :input
    
     def call
+        Irena::EnergyScraper.new
         intro
         menu
         get_user_input
@@ -28,8 +29,7 @@ class CLI     # Menu actions
     end
    
     def menu
-        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
-        choices.each.with_index(1) do |option, i|
+        Irena::EnergyScraper::ENERGY_TYPES.each.with_index(1) do |option, i|
           puts "#{i}. #{option}".colorize(:light_green)
         end
         puts "\n Please enter a number 1-#{Irena::EnergyScraper::ENERGY_TYPES.length}.

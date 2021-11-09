@@ -6,16 +6,15 @@ class EnergyScraper
 
   attr_accessor :root_url
 
-  ENERGY_TYPES = [ "bioenergy", "geothermal", "hydropower", "ocean", "solar", "wind" ]
+  ENERGY_TYPES = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
 
-  def initialize(root_url)
+  def initialize()
     @root_url = root_url
   end
 
   def self.get_energies
     ENERGY_TYPES.each do |e|
       Nokogiri::HTML(URI.open("https://www.irena.org/#{e}"))
-      binding.pry
       Irena::Energy.name
       Irena::Energy.description = css('div.center-right-border > p').text
 
