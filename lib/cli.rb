@@ -44,28 +44,34 @@ class CLI     # Menu actions
             case input
             
                 when "1"
-                    puts "BIOENERGY".colorize(:green)
-                    p Irena::EnergyScraper::get_bioenergy
+                    #puts "BIOENERGY".colorize(:green)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[0].upcase.colorize(:green)
+                    #p Irena::EnergyScraper::get_bioenergy
 
                 when "2"
-                    puts "GEOTHERMAL".colorize(:light_red)
-                    p Irena::EnergyScraper::get_geothermal
+                    #puts "GEOTHERMAL".colorize(:light_red)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[1].upcase.colorize(:light_red)
+                    #p Irena::EnergyScraper::get_geothermal
                     
                 when "3"
-                    puts "HYDROPOWER".colorize(:blue)
-                    p Irena::EnergyScraper::get_hydropower
+                    #puts "HYDROPOWER".colorize(:blue)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[2].upcase.colorize(:blue)
+                    #p Irena::EnergyScraper::get_hydropower
                     
                 when "4"
-                    puts "OCEAN".colorize(:cyan)
-                    p Irena::EnergyScraper::get_ocean
+                    #puts "OCEAN".colorize(:cyan)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[3].upcase.colorize(:cyan)
+                    #p Irena::EnergyScraper::get_ocean
                     
                 when "5"
-                    puts "SOLAR".colorize(:yellow)
-                    p Irena::EnergyScraper::get_solar
+                    #puts "SOLAR".colorize(:yellow)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[4].upcase.colorize(:yellow)
+                    #p Irena::EnergyScraper::get_solar
                     
                 when "6"
-                    puts "WIND".colorize(:light_white)
-                    p Irena::EnergyScraper::get_wind
+                    #puts "WIND".colorize(:light_white)
+                    puts Irena::EnergyScraper::ENERGY_TYPES[5].upcase.colorize(:light_white)
+                    #p Irena::EnergyScraper::get_wind
                     
                 when "list"
                     menu

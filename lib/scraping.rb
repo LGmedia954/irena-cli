@@ -15,7 +15,8 @@ class EnergyScraper
   def self.get_energies
     ENERGY_TYPES.each do |e|
       Nokogiri::HTML(URI.open("https://www.irena.org/#{e}"))
-      p css('div.center-right-border > p').text
+      e = Irena::Energy.name
+      Irena::Energy.description = css('div.center-right-border > p').text
 
     end
   end
