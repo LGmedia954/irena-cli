@@ -24,7 +24,7 @@ attr_accessor :name, :description
       @@all.clear
     end
     
-    # def self.new(name, description)  #Constructor
+    # def self.new(name, description)
     #   EnergyScraper.new(*args).each do |energy|
     #     energy.send("#{name}=", description) # Mass Assignment
     #   end
