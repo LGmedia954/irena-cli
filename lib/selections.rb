@@ -20,21 +20,15 @@ attr_accessor :name, :description
         @@all  # accessible to the entire class
     end
 
-    # def self.reset
-    #   @@all.clear
-    # end
-
-    # def description
-    #   @description
-    # end
- 
-    
-    def self.new(name, description)  #Constructor
-      EnergyScraper.new(*args).each do |energy|
-        energy.send("#{name}=", description) # Mass Assignment
-      end
+    def self.reset
+      @@all.clear
     end
-
+    
+    # def self.new(name, description)  #Constructor
+    #   EnergyScraper.new(*args).each do |energy|
+    #     energy.send("#{name}=", description) # Mass Assignment
+    #   end
+    # end
 
 end
 
