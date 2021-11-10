@@ -58,3 +58,4 @@ class EnergyScraper
 end
 
 end
+

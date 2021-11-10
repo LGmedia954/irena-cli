@@ -46,25 +46,31 @@ class CLI     # Menu actions
                 when "1"
                     puts Irena::EnergyScraper::ENERGY_TYPES[0].upcase.colorize(:green)
                     puts Irena::Energy.to_s
+                    #p Irena::EnergyScraper::get_bioenergy
 
                 when "2"
                     puts Irena::EnergyScraper::ENERGY_TYPES[1].upcase.colorize(:light_red)
+                    puts Irena::Energy.to_s
                     #p Irena::EnergyScraper::get_geothermal
                     
                 when "3"
                     puts Irena::EnergyScraper::ENERGY_TYPES[2].upcase.colorize(:blue)
+                    puts Irena::Energy.to_s
                     #p Irena::EnergyScraper::get_hydropower
                     
                 when "4"
                     puts Irena::EnergyScraper::ENERGY_TYPES[3].upcase.colorize(:cyan)
+                    puts Irena::Energy.to_s
                     #p Irena::EnergyScraper::get_ocean
                     
                 when "5"
                     puts Irena::EnergyScraper::ENERGY_TYPES[4].upcase.colorize(:yellow)
+                    puts Irena::Energy.to_s
                     #p Irena::EnergyScraper::get_solar
                     
                 when "6"
                     puts Irena::EnergyScraper::ENERGY_TYPES[5].upcase.colorize(:light_white)
+                    puts Irena::Energy.to_s
                     #p Irena::EnergyScraper::get_wind
                     
                 when "list"
