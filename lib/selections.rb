@@ -26,7 +26,7 @@ attr_accessor :name, :description
 
     def self.to_s
       <<~TEXT
-        "Energy Type: #{@name}"
+        "Energy Type: #{@name}\n"
         "Description: #{@description}"
       TEXT
     end
