@@ -15,12 +15,12 @@ class EnergyScraper
   def self.get_energies
     ENERGY_TYPES.each do |energy|
       doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
-      @name = doc.css('h2')[0].text,
-      @description = doc.css('div.center-right-border > p').text
 
-      Irena::Energy.new(:name, :description)
+      name = doc.css('h2')[0].text
+      description = doc.css('div.center-right-border > p').text
+
+      Irena::Energy.new(name, description)
     end
-      self.get_energies
   end
 
   # def self.get_energies
@@ -32,7 +32,6 @@ class EnergyScraper
   #     energy << energy_details
 
   #   end
-  #     self.get_energies
   #     Irena::Energy.new(:name, :description)
   # end
   
