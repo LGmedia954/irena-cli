@@ -23,6 +23,13 @@ attr_accessor :name, :description
     def self.reset
       @@all.clear
     end
+
+    def self.to_s
+      <<~TEXT
+        "Energy Type: #{@name}"
+        "Description: #{@description}"
+      TEXT
+    end
     
     # def self.new(name, description)
     #   EnergyScraper.new(*args).each do |energy|

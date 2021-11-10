@@ -45,7 +45,7 @@ class CLI     # Menu actions
             
                 when "1"
                     puts Irena::EnergyScraper::ENERGY_TYPES[0].upcase.colorize(:green)
-                    #p Irena::EnergyScraper::get_bioenergy
+                    puts Irena::Energy.to_s
 
                 when "2"
                     puts Irena::EnergyScraper::ENERGY_TYPES[1].upcase.colorize(:light_red)
