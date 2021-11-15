@@ -21,7 +21,7 @@ class EnergyScraper
       energy_details[:description] = doc.css('div.center-right-border > p').text.strip
       #energy << energy_details.to_s
       energy_details
-      binding.pry
+      #binding.pry
 
     end
   end

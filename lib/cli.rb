@@ -45,7 +45,7 @@ class CLI     # Menu actions
             case input
             
                 when "1"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[0].colorize(:green)
+                    p Irena::EnergyScraper::ENERGY_TYPES[0].colorize(:green)
 
                 when "2"
                     puts Irena::EnergyScraper::ENERGY_TYPES[1].colorize(:light_red) 
