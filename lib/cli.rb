@@ -17,7 +17,7 @@ class CLI     # Menu actions
 
     def intro
         puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
-        puts "IRENA stands for the International Renewable Energy Agency.\n".colorize(:yellow) 
+        puts "IRENA stands for the International Renewable Energy Agency.\n" 
         puts "     I support world countries in their transition to a sustainable energy future.
         With nearly 200 countries actively engaged, I serve as the principal platform for
         innovative cooperation, with a centre of excellence and a repository of policy,
@@ -31,7 +31,6 @@ class CLI     # Menu actions
     def menu
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
         choices.each.with_index(1) do |option, i|
-        # Irena::EnergyScraper::ENERGY_TYPES.each.with_index(1) do |option, i|
           puts "#{i}. #{option}"
         end
         puts "\n Please enter a number 1-#{Irena::EnergyScraper::ENERGY_TYPES.length}.
