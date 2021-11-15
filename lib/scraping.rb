@@ -12,28 +12,31 @@ class EnergyScraper
     @root_url = root_url
   end
 
-  def self.get_energies
-    ENERGY_TYPES.each do |energy|
-      doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
-
-      name = doc.css('h2')[0].text
-      description = doc.css('div.center-right-border > p').text
-
-      Irena::Energy.new(name, description)
-    end
-  end
-
   # def self.get_energies
   #   ENERGY_TYPES.each do |energy|
   #     doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
-  #     energy_details = {}
-  #     energy_details[:name] = doc.css('h2')[0].text,
-  #     energy_details[:description] = doc.css('div.center-right-border > p').text
-  #     energy << energy_details
+      
+  #     Irena::Energy.new(
+  #     name = doc.css('h2')[0].text,
+  #     description = doc.css('div.center-right-border > p').text
+  #     )
+
+  #    return "Energy Type: #{name}"
+  #    return "Description: #{description}"
 
   #   end
-  #     Irena::Energy.new(:name, :description)
   # end
+
+  def self.get_energies
+    ENERGY_TYPES.each do |energy|
+      doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
+      energy_details = {}
+      energy_details[:name] = doc.css('h2')[0].text,
+      energy_details[:description] = doc.css('div.center-right-border > p').text
+      energy << energy_details.to_s
+
+    end  
+  end
   
 
   # def self.get_bioenergy
@@ -70,4 +73,3 @@ class EnergyScraper
 end
 
 end
-
