@@ -5,7 +5,6 @@ class CLI     # Menu actions
     attr_accessor :input
    
     def call
-        Irena::EnergyScraper.new
         Irena::EnergyScraper.get_energies
         intro
         menu
@@ -30,8 +29,10 @@ class CLI     # Menu actions
     end
    
     def menu
-        Irena::EnergyScraper::ENERGY_TYPES.each.with_index(1) do |option, i|
-          puts "#{i}. #{option}".colorize(:light_green)
+        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
+        choices.each.with_index(1) do |option, i|
+        # Irena::EnergyScraper::ENERGY_TYPES.each.with_index(1) do |option, i|
+          puts "#{i}. #{option}"
         end
         puts "\n Please enter a number 1-#{Irena::EnergyScraper::ENERGY_TYPES.length}.
         \n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
