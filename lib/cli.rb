@@ -18,7 +18,7 @@ class CLI     # Menu actions
     def intro
         puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
         puts "IRENA stands for the International Renewable Energy Agency.\n" 
-        puts "     I support world countries in their transition to a sustainable energy future.
+        puts "\n        I support world countries in their transition to a sustainable energy future.
         With nearly 200 countries actively engaged, I serve as the principal platform for
         innovative cooperation, with a centre of excellence and a repository of policy,
         technology, resources, and financial knowledge on renewable energy.\n
