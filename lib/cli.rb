@@ -29,7 +29,7 @@ class CLI     # Menu actions
     end
    
     def menu
-        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind", "About" ]
+        choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
         choices.each.with_index(1) do |option, i|
           puts "#{i}. #{option}"
         end

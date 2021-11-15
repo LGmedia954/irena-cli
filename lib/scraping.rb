@@ -17,9 +17,10 @@ class EnergyScraper
     ENERGY_TYPES.each do |energy|
       doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
       energy_details = {}
-      energy_details[:name] = doc.css('h2')[0].text.strip,
+      energy_details[:name] = doc.css('h2')[0].text.strip
       energy_details[:description] = doc.css('div.center-right-border > p').text.strip
-      energy << energy_details.to_s
+      energy_details
+      #binding.pry
 
     end
   end
