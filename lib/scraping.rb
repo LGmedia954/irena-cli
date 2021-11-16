@@ -12,19 +12,21 @@ class EnergyScraper
     @root_url = root_url
   end
   
-  # This below appears to be working, but the scrape is not behaving as intended.
   def self.get_energies
     ENERGY_TYPES.each do |energy|
       doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
-      energy_details = {}
-      energy_details[:name] = doc.css('h2')[0].text.strip
-      energy_details[:description] = doc.css('div.center-right-border > p').text.strip
-      energy << energy_details.to_s
-      #energy_details
-      #binding.pry
+      
+      Irena::Energy.new(doc.css('h2')[0].text.strip, doc.css('div.center-right-border > p').text.strip)
 
     end
   end
+
+
+      # energy_details = {}
+      # energy_details[:name]
+      # energy_details[:description]
+      # Tried:  energy << energy_details.to_s   versus   # energy_details
+
 
   # def self.get_energies
   #   ENERGY_TYPES.each do |energy|
