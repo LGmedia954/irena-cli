@@ -23,8 +23,8 @@ class EnergyScraper
 
 
       # energy_details = {}
-      # energy_details[:name]
-      # energy_details[:description]
+      # energy_details[:name].doc.css('h2')[0].text.strip
+      # energy_details[:description].doc.css('div.center-right-border > p').text.strip
       # Tried:  energy << energy_details.to_s   versus   # energy_details
 
 

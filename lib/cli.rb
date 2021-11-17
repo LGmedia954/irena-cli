@@ -49,19 +49,24 @@ class CLI     # Menu actions
                     puts Irena::Energy.all[0].description.colorize(:green)
 
                 when "2"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[1].colorize(:light_red) 
+                    puts Irena::Energy.all[1].name.upcase
+                    puts Irena::Energy.all[1].description.colorize(:light_red)
                     
                 when "3"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[2].colorize(:blue)      
+                    puts Irena::Energy.all[2].name.upcase
+                    puts Irena::Energy.all[2].description.colorize(:blue)
                     
                 when "4"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[3].colorize(:cyan)   
+                    puts Irena::Energy.all[3].name.upcase
+                    puts Irena::Energy.all[3].description.colorize(:cyan)
                     
                 when "5"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[4].colorize(:yellow)    
+                    puts Irena::Energy.all[4].name.upcase
+                    puts Irena::Energy.all[4].description.colorize(:yellow)
                     
                 when "6"
-                    puts Irena::EnergyScraper::ENERGY_TYPES[5].colorize(:light_white)
+                    puts Irena::Energy.all[5].name.upcase
+                    puts Irena::Energy.all[5].description.colorize(:light_white)
                     
                     
                 when "list"
