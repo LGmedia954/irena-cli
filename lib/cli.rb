@@ -1,3 +1,5 @@
+require 'pry'
+
 module Irena
 
 class CLI     # Menu actions
@@ -31,7 +33,7 @@ class CLI     # Menu actions
     def menu
         choices = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
         choices.each.with_index(1) do |option, i|
-          puts "#{i}. #{option}"
+          puts "#{i}. #{option}".colorize(:green)
         end
         puts "\n Please enter a number 1-#{Irena::EnergyScraper::ENERGY_TYPES.length}.
         \n To return to this menu at any time, type LIST.\n To exit the program, type EXIT.\n"
@@ -43,36 +45,17 @@ class CLI     # Menu actions
             input = gets.strip.downcase
             process_input
             case input
-            
-                when "1"
-                    puts Irena::Energy.all[0].name.upcase
-                    puts Irena::Energy.all[0].description.colorize(:green)
 
-                when "2"
-                    puts Irena::Energy.all[1].name.upcase
-                    puts Irena::Energy.all[1].description.colorize(:light_red)
-                    
-                when "3"
-                    puts Irena::Energy.all[2].name.upcase
-                    puts Irena::Energy.all[2].description.colorize(:blue)
-                    
-                when "4"
-                    puts Irena::Energy.all[3].name.upcase
-                    puts Irena::Energy.all[3].description.colorize(:cyan)
-                    
-                when "5"
-                    puts Irena::Energy.all[4].name.upcase
-                    puts Irena::Energy.all[4].description.colorize(:yellow)
-                    
-                when "6"
-                    puts Irena::Energy.all[5].name.upcase
-                    puts Irena::Energy.all[5].description.colorize(:light_white)
-                    
+                when "1","2","3","4","5","6"
+                    puts Irena::Energy.all[input.to_i - 1].name.upcase
+                    puts Irena::Energy.all[input.to_i - 1].description
                     
                 when "list"
                     menu
+
                 when "exit"
                     close
+
                 else
                     puts "Invalid input. Please try again.".colorize(:red)
         
@@ -83,7 +66,7 @@ class CLI     # Menu actions
     def process_input
         @input = gets.strip.downcase
         idx = @input.to_i - 1
-        valid = (0...Irena::EnergyScraper::ENERGY_TYPES.length).to_a.include?(@input.to_i - 1)
+        valid = (0...Irena::EnergyScraper::ENERGY_TYPES.length).to_a.include?(@input.to_i - 1) 
     end
 
     def close
