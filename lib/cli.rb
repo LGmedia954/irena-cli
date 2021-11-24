@@ -11,10 +11,6 @@ class CLI     # Menu actions
         get_user_input
     end
 
-    # I decided to eliminate Option 7 and its scrape and 
-    # instead place the About paragraph below, so that I may 
-    # unify the 6 Energy scrapes for the same CSS element.
-
     def intro
         puts "\n#######---Hello! My name is IRENA.---#######\n".colorize(:yellow)
         puts "IRENA stands for the International Renewable Energy Agency.\n" 

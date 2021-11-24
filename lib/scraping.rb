@@ -37,9 +37,6 @@ class EnergyScraper
   #     description = doc.css('div.center-right-border > p').text
   #     )
 
-  #    return "Energy Type: #{name}"
-  #    return "Description: #{description}"
-
   #   end
   # end
   
