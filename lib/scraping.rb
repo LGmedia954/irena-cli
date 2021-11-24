@@ -1,52 +1,48 @@
+require 'pry'
+
 module Irena
 
 class EnergyScraper
 
-  def self.renewables(url)
+  attr_accessor :root_url
 
-      bio = Nokogiri::HTML(open("https://www.irena.org/bioenergy"))
-      geo = Nokogiri::HTML(open("https://www.irena.org/geothermal"))
-      hydro = Nokogiri::HTML(open("https://www.irena.org/hydropower"))
-      seas = Nokogiri::HTML(open("https://www.irena.org/ocean"))
-      sun = Nokogiri::HTML(open("https://www.irena.org/solar"))
-      air = Nokogiri::HTML(open("https://www.irena.org/wind"))
-      org = Nokogiri::HTML(open("https://www.irena.org/aboutirena"))
-      energy = {}
+  ENERGY_TYPES = [ "Bioenergy", "Geothermal", "Hydropower", "Ocean", "Solar", "Wind" ]
 
-      energy[:bioenergy] = bio.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:geothermal] = geo.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:hydropower] = hydro.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:ocean] = seas.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:solar] = sun.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:wind] = air.search("p.center-right-border").text.strip.gsub(/\s+/,' ')
-      energy[:about] = org.search("span.center-right-border").text.strip.gsub(/\s+/,' ')
+  def initialize(*args)
+    @root_url = root_url
+  end
+  
+  def self.get_energies
+    ENERGY_TYPES.each do |energy|
+      doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
+      
+      Irena::Energy.new(doc.css('h2')[0].text.strip, doc.css('div.center-right-border > p').text.strip)
 
-      energy
-
+    end
   end
 
 
-#  def self.print_renewables(input)
- #   EnergyScraper.renewables(url).each do |k,v|
-  #      case input
+      # energy_details = {}
+      # energy_details[:name].doc.css('h2')[0].text.strip
+      # energy_details[:description].doc.css('div.center-right-border > p').text.strip
+      # Tried:  energy << energy_details.to_s   versus   # energy_details
 
-   #     when "1"
-   #       print "#{energy}:#{bioenergy}"
-   #     when "2"  
-   #       print "#{energy}:#{geothermal}"
-   #     when "3"
-   #       print "#{energy}:#{hydropower}"
-   #     when "4"
-   #       print "#{energy}:#{ocean}"
-   #     when "5"
-   #       print "#{energy}:#{solar}"
-   #     when "6"
-   #      print "#{energy}:#{wind}"
-   #     when "7"
-   #       print "#{energy}:#{about}"
-   #     end
-   #  end
-#  end
+
+  # def self.get_energies
+  #   ENERGY_TYPES.each do |energy|
+  #     doc = Nokogiri::HTML(URI.open("https://www.irena.org/#{energy}"))
+      
+  #     Irena::Energy.new(
+  #     name = doc.css('h2')[0].text,
+  #     description = doc.css('div.center-right-border > p').text
+  #     )
+
+  #    return "Energy Type: #{name}"
+  #    return "Description: #{description}"
+
+  #   end
+  # end
+  
 
 
 end

@@ -1,30 +1,41 @@
+require 'pry'
+
 module Irena
 
 class Energy
 
-attr_accessor :bioenergy, :geothermal, :hydropower, :ocean, :solar, :wind, :about
+attr_accessor :name, :description
 
 @@all = []
 
     # Hook
-    def initialize
+    def initialize(name, description)
+        @name = name
+        @description = description
         @@all << self
     end
-     
+
     # Class Method, Class Getter
     def self.all
-        @@all
+        @@all  # accessible to the entire class
     end
 
-    
-    #Constructor
-    def self.new_from_renewables(url)
-        Energy.new.tap do |energy|
-        EnergyScraper.renewables(url).each do |k,v|
-            energy.send("#{k}=", v) # Mass Assignment
-            end
-        end
+    def self.reset
+      @@all.clear
     end
+
+    # def self.to_s
+    #   <<~TEXT
+    #     "Energy Type: #{@name}"
+    #     "Description: #{@description}"
+    #   TEXT
+    # end
+    
+    # def self.new(name, description)
+    #   EnergyScraper.new(*args).each do |energy|
+    #     energy.send("#{name}=", description) # Mass Assignment
+    #   end
+    # end
 
 end
 
